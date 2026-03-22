@@ -96,8 +96,8 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
 .battle-scene{position:absolute;top:0;left:0;right:0;height:175px;overflow:hidden;}
 
 /* enemy lane */
-.enemy-lane{position:absolute;top:5px;left:0;right:0;height:165px;overflow:visible;}
-.enemy-sprite{position:absolute;display:flex;flex-direction:column;align-items:center;transition:left .4s ease;}
+.enemy-lane{position:absolute;top:5px;left:0;right:0;height:165px;overflow:visible;z-index:10;}
+.enemy-sprite{position:absolute;display:flex;flex-direction:column;align-items:center;transition:left .4s ease;z-index:11;}
 .enemy-sprite svg{animation:enemyWalk .5s steps(2) infinite;}
 @keyframes enemyWalk{0%{transform:translateY(0);}50%{transform:translateY(3px);}}
 .enemy-hp-mini{width:36px;height:4px;background:rgba(0,0,0,.3);border-radius:2px;overflow:hidden;margin-top:2px;}
@@ -329,6 +329,10 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
 @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
 .gbtn{background:linear-gradient(135deg,#6a3090,#9a60c0);color:#fff;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaHei',sans-serif;font-size:14px;letter-spacing:2px;padding:11px 32px;cursor:pointer;border:none;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.4);transition:all .2s;}
 .gbtn-outline{background:rgba(255,255,255,.2);border:2px solid rgba(200,150,255,.4);color:rgba(200,180,255,.8);font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaHei',sans-serif;font-size:12px;letter-spacing:2px;padding:8px 22px;cursor:pointer;border-radius:6px;transition:all .2s;}
+
+@keyframes fxPop{0%{opacity:1;transform:translate(-50%,-50%) scale(0.5);}60%{opacity:1;transform:translate(-50%,-120%) scale(1.2);}100%{opacity:0;transform:translate(-50%,-180%) scale(0.8);}}
+@keyframes fxRing{0%{opacity:1;transform:translate(-50%,-50%) scale(0.5);}100%{opacity:0;transform:translate(-50%,-50%) scale(2.5);}}
+
 </style>
 </head>
 <body>
@@ -698,7 +702,7 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
 // ══════════════════════════════════════
 const IMGS={
   ruoyin:'https://raw.githubusercontent.com/Emily-Ji/her-world-I-mage/main/559FF2A6-9B5F-41D6-B6D0-73B048EDE079.png',
-  huaishi:'https://raw.githubusercontent.com/Emily-Ji/her-world-I-mage/main/IMG_6103.png',
+  huaishi:'https://raw.githubusercontent.com/Emily-Ji/her-world-I-mage/main/0535741E-E62C-49C4-AE68-DD13056C94F5.png',
   dancer:'https://raw.githubusercontent.com/Emily-Ji/her-world-I-mage/main/0D3164DE-D538-4982-84A7-683F329BA5E4.png',
   granny:'https://raw.githubusercontent.com/Emily-Ji/her-world-I-mage/main/84B60E41-2C87-44F6-A7F4-012F3560DD9D.png'
 };
@@ -939,7 +943,7 @@ let chestOpen = false;
 // ══════════════════════════════════════
 //  INIT
 // ══════════════════════════════════════
-(function initTitle(){
+function initTitle(){
   // Stars
   const sc = document.getElementById('title-stars');
   if(sc){for(let i=0;i<80;i++){
@@ -979,7 +983,7 @@ let chestOpen = false;
       hs.appendChild(s);
     }
   },100);
-})();
+}
 
 // ══ SCREEN NAVIGATION ══
 function showS(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));}
@@ -1331,6 +1335,7 @@ function cellTierClass(item) {
 
 // ── CELL INTERACTIONS ──
 function onCellTap(idx) {
+  if(state.battleActive) return; // 战斗中禁止移动
   const item = grid[idx];
 
   // Tap chest → open immediately (no step cost)
@@ -1837,6 +1842,13 @@ function heroAttackCycle(){
     const finalDmg=isCrit?dmg*2:dmg;
     const total=Math.floor(finalDmg*(1+extraHit*0.5));
     if(!target.dead){
+      // 攻击特效
+      const eEl = document.getElementById('enemy-'+target.id);
+      if(eEl){
+        const rect = eEl.getBoundingClientRect();
+        const appRect = document.getElementById('app').getBoundingClientRect();
+        showAttackFX(bestHeroCid, rect.left - appRect.left + rect.width/2, rect.top - appRect.top + rect.height/2);
+      }
       applyDamageToEnemy(target,total);
       spawnDmgNumber(total,isCrit);
     }
@@ -2845,6 +2857,26 @@ function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.ra
 let tT=null;
 function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(tT);tT=setTimeout(()=>t.classList.remove('on'),2600);}
 
+
+function showAttackFX(heroId, targetX, targetY) {
+  const colors = {ruoyin:'#7fff7f', huaishi:'#ff9040', dancer:'#40cfff'};
+  const emojis = {ruoyin:'🌿', huaishi:'⚔️', dancer:'💧'};
+  const color = colors[heroId] || '#ffffff';
+  const emoji = emojis[heroId] || '✦';
+  const app = document.getElementById('app');
+  const fx = document.createElement('div');
+  fx.style.cssText = `position:absolute;left:${targetX}px;top:${targetY}px;transform:translate(-50%,-50%);font-size:20px;z-index:999;pointer-events:none;animation:fxPop .5s ease forwards;`;
+  fx.textContent = emoji;
+  app.appendChild(fx);
+  setTimeout(()=>fx.remove(), 500);
+  // 光圈
+  const ring = document.createElement('div');
+  ring.style.cssText = `position:absolute;left:${targetX}px;top:${targetY}px;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;border:2px solid ${color};z-index:998;pointer-events:none;animation:fxRing .4s ease forwards;`;
+  app.appendChild(ring);
+  setTimeout(()=>ring.remove(), 400);
+}
+
+document.addEventListener('DOMContentLoaded', initTitle);
 </script>
 </body>
 </html>

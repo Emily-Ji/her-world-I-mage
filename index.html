@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>她的世界</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Long+Cang&family=ZCOOL+XiaoWei&display=swap');
@@ -12,8 +12,8 @@
   --tier-normal:#e8e8e8;--tier-rare:#a8d8ff;--tier-legend:#c896ff;--tier-myth:#ffd700;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;user-select:none;}
-body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaHei',sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;width:100vw;overflow:hidden;}
-#app{width:min(430px,100vw);height:min(860px,100vh);position:relative;overflow:hidden;background:#0a0010;}
+body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaHei',sans-serif;display:flex;align-items:center;justify-content:center;height:100dvh;width:100dvw;overflow:hidden;}
+#app{width:min(430px,100vw);height:min(860px,100dvh);position:relative;overflow:hidden;background:#0a0010;}
 .screen{position:absolute;inset:0;display:none;flex-direction:column;}
 .screen.active{display:flex;}
 
@@ -67,7 +67,7 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
 @keyframes hubFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
 .hub-top{flex-shrink:0;padding:10px 14px 6px;display:flex;align-items:center;gap:8px;background:rgba(0,0,0,.4);border-bottom:1px solid rgba(200,150,255,.1);position:relative;z-index:5;}
 .hub-avatar{width:40px;height:40px;border-radius:50%;border:2px solid rgba(200,150,255,.4);overflow:hidden;background:rgba(100,40,180,.3);}
-.hub-avatar img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.hub-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 18%;}
 .hub-name{font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','STSong','Long Cang',serif;font-size:14px;color:#e0c8ff;letter-spacing:2px;}
 .hub-base{font-size:10px;color:rgba(200,180,255,.4);}
 .hub-resources{margin-left:auto;display:flex;gap:10px;align-items:center;}
@@ -81,7 +81,7 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
 .hub-notif{position:absolute;top:-5px;right:-5px;width:14px;height:14px;background:#ff4040;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:8px;color:#fff;}
 
 /* Bottom Nav */
-.bottom-nav{flex-shrink:0;height:72px;background:rgba(0,0,0,.8);border-top:1px solid rgba(200,150,255,.15);display:flex;align-items:center;justify-content:space-around;padding:0 8px;padding-bottom:env(safe-area-inset-bottom,0px);position:relative;z-index:10;}
+.bottom-nav{flex-shrink:0;height:72px;background:rgba(0,0,0,.8);border-top:1px solid rgba(200,150,255,.15);display:flex;align-items:center;justify-content:space-around;padding:0 8px;padding-bottom:max(env(safe-area-inset-bottom,0px),16px);position:relative;z-index:10;}
 .nav-tab{display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;padding:6px 16px;border-radius:8px;transition:all .2s;position:relative;}
 .nav-tab.active{background:rgba(150,60,220,.25);}
 .nav-tab-icon{font-size:20px;transition:transform .2s;}
@@ -119,7 +119,7 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
 .hero-stats-row::-webkit-scrollbar{display:none;}
 .hsr-hero{display:flex;align-items:center;gap:3px;flex-shrink:0;}
 .hsr-av{width:24px;height:24px;border-radius:50%;overflow:hidden;border:1px solid rgba(200,150,255,.4);}
-.hsr-av img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.hsr-av img{width:100%;height:100%;object-fit:cover;object-position:center 18%;}
 .hsr-name{font-size:8px;color:#d0d0e8;}
 .hsr-atk{font-size:8px;color:#b090e8;}
 .hsr-ult{font-size:8px;color:#ff9090;margin-left:2px;}
@@ -150,7 +150,7 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
 .cell.tier-myth{background:#604000;border:1px solid rgba(255,200,0,.8);}
 .cell.tier-coin{background:#3a3a1a;border:1px solid rgba(200,200,230,.3);}
 .cell.tier-chest{background:#1a2a3a;border:1px solid rgba(100,200,255,.4);}
-.cell-img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.cell-img{width:100%;height:100%;object-fit:cover;object-position:center 18%;}
 .cell-tier-tag{position:absolute;bottom:1px;right:2px;font-size:6px;font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','STSong','Long Cang',serif;color:rgba(255,255,255,.8);text-shadow:0 0 3px rgba(0,0,0,.9);}
 .cell-icon{font-size:22px;line-height:1;}
 .cell-label{font-size:6px;color:rgba(255,255,255,.6);}
@@ -246,7 +246,7 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
 /* ══ AFFECTION SCREEN ══ */
 #s-aff{background:#060404;flex-direction:column;}
 .aff-orb{position:absolute;border-radius:50%;filter:blur(50px);animation:orbP 5s ease-in-out infinite;pointer-events:none;}
-#aff-char-wrap{position:absolute;bottom:280px;left:50%;transform:translateX(-50%) translateY(20px);width:260px;height:460px;opacity:0;transition:opacity 1s,transform 1s;}
+#aff-char-wrap{position:absolute;bottom:360px;left:50%;transform:translateX(-50%) translateY(20px);width:220px;height:380px;opacity:0;transition:opacity 1s,transform 1s;}
 #aff-char-wrap.vis{opacity:1;transform:translateX(-50%) translateY(0);}
 #aff-char-wrap img{height:360px;object-fit:contain;filter:drop-shadow(0 0 18px rgba(139,79,160,.55));animation:vnFloat 4s ease-in-out infinite;}
 #aff-top-bar{position:absolute;top:0;left:0;right:0;padding:10px 14px;background:linear-gradient(180deg,rgba(6,4,4,.95),transparent);z-index:5;display:flex;align-items:center;gap:8px;}
@@ -307,7 +307,7 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
 .char-sel-item{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;padding:6px;border-radius:8px;border:2px solid transparent;transition:all .2s;}
 .char-sel-item.selected{border-color:#d0d0e8;background:rgba(200,200,230,.1);}
 .char-sel-av{width:50px;height:50px;border-radius:50%;overflow:hidden;border:1px solid rgba(200,150,255,.3);}
-.char-sel-av img{width:100%;height:100%;object-fit:cover;object-position:top;}
+.char-sel-av img{width:100%;height:100%;object-fit:cover;object-position:center 18%;}
 .char-sel-name{font-size:9px;color:#d0d0e8;}
 
 /* ══ RESULT ══ */
@@ -329,18 +329,6 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
 @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
 .gbtn{background:linear-gradient(135deg,#6a3090,#9a60c0);color:#fff;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaHei',sans-serif;font-size:14px;letter-spacing:2px;padding:11px 32px;cursor:pointer;border:none;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.4);transition:all .2s;}
 .gbtn-outline{background:rgba(255,255,255,.2);border:2px solid rgba(200,150,255,.4);color:rgba(200,180,255,.8);font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaHei',sans-serif;font-size:12px;letter-spacing:2px;padding:8px 22px;cursor:pointer;border-radius:6px;transition:all .2s;}
-
-/* ══ 云游天下 ══ */
-.wander-card{background:rgba(15,8,30,.85);border:1px solid rgba(180,140,255,.25);border-radius:10px;padding:14px;display:flex;align-items:center;gap:12px;cursor:pointer;margin-bottom:10px;transition:border .2s;}
-.wander-card:active{border-color:rgba(200,150,255,.6);}
-.wander-card-icon{font-size:28px;flex-shrink:0;}
-.wander-card-name{font-size:14px;color:#e0c8ff;letter-spacing:2px;margin-bottom:3px;}
-.wander-card-desc{font-size:11px;color:rgba(200,180,255,.5);margin-bottom:4px;}
-.wander-card-reward{font-size:10px;color:rgba(180,220,180,.6);letter-spacing:.5px;}
-/* ══ 小游戏通用 ══ */
-.minigame-reward-popup{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(10,5,25,.95);border:1px solid rgba(200,150,255,.5);border-radius:12px;padding:20px 24px;text-align:center;z-index:9999;animation:popIn .3s ease;}
-@keyframes popIn{from{opacity:0;transform:translate(-50%,-50%) scale(.8);}to{opacity:1;transform:translate(-50%,-50%) scale(1);}}
-
 </style>
 </head>
 <body>
@@ -403,13 +391,13 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
     </div>
   </div>
   <div class="hub-btns">
+    <div class="hub-btn" onclick="navTo('roam')">
+      <span class="hub-btn-icon">☁️</span>
+      <span class="hub-btn-label">云游天下</span>
+    </div>
     <div class="hub-btn" onclick="showHubSection('battle')">
       <span class="hub-btn-icon">⚔️</span>
       <span class="hub-btn-label">主线战斗</span>
-    </div>
-    <div class="hub-btn" onclick="showWander()">
-      <span class="hub-btn-icon">🌿</span>
-      <span class="hub-btn-label">云游天下</span>
     </div>
     <div class="hub-btn" onclick="showHubSection('garrison')">
       <span class="hub-btn-icon">🏰</span>
@@ -441,6 +429,7 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
 <div class="screen" id="s-battle">
   <!-- Battle scene: Miao Abyss -->
   <div class="battle-scene" id="battle-scene" style="background:linear-gradient(180deg,#04020a 0%,#080415 30%,#0c0520 60%,#060310 100%);">
+    <button id="battle-exit-top" onclick="confirmLeave()" style="position:absolute;top:6px;left:8px;z-index:20;background:rgba(0,0,0,.65);border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.7);font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaHei',sans-serif;font-size:10px;padding:4px 10px;cursor:pointer;border-radius:6px;backdrop-filter:blur(4px);">✕ 退出战斗</button>
     <!-- Bioluminescent cave atmosphere -->
     <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;">
       <!-- Dark cave walls with texture -->
@@ -513,7 +502,6 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
   <!-- Board -->
   <div class="board-area">
     <div class="board-top-bar">
-      <button onclick="confirmLeave()" style="background:rgba(80,20,20,.7);border:1px solid rgba(255,100,100,.3);color:rgba(255,180,180,.8);font-size:10px;padding:2px 8px;cursor:pointer;border-radius:4px;letter-spacing:1px;">✕ 退出</button>
       <div class="btb-wave" id="btb-wave">第1波</div>
       <div style="font-size:9px;color:rgba(200,180,255,.4);margin-left:6px;" id="btb-enemy-count">敌军0</div>
       <div class="btb-steps">
@@ -532,8 +520,7 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
       <span class="base-hp-text" id="base-hp-text">1000/1000</span>
     </div>
     <div class="btm-btns">
-      <button class="go-home-btn" onclick="confirmLeave()">← 返回</button>
-      <button id="fight-start-btn" onclick="startFighting()" style="flex:1;background:linear-gradient(135deg,#6a1010,#cc2020);color:#fff;font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','STSong','Long Cang',serif;font-size:16px;letter-spacing:4px;padding:7px;cursor:pointer;border:none;border-radius:8px;box-shadow:0 4px 12px rgba(139,26,26,.6);">⚔ 出 战 ！</button>
+      <button id="fight-start-btn" onclick="startFighting()" style="flex:1;background:linear-gradient(135deg,#6a1010,#cc2020);color:#fff;font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','STSong','Long Cang',serif;font-size:16px;letter-spacing:4px;padding:10px;cursor:pointer;border:none;border-radius:8px;box-shadow:0 4px 12px rgba(139,26,26,.6);">⚔ 出 战 ！</button>
       <button class="pause-btn" id="pause-btn" onclick="togglePause()" style="display:none;">暂停</button>
     </div>
   </div>
@@ -604,17 +591,6 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
     <button style="margin-left:auto;background:transparent;border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.6);font-size:10px;padding:4px 10px;cursor:pointer;border-radius:4px;" onclick="navTo('hub')">← 返回</button>
   </div>
   <div class="garrison-body" id="garrison-body"></div>
-  <!-- 云游天下入口 -->
-  <div style="padding:0 14px 16px;" id="wander-btn-wrap">
-    <div onclick="showWander()" style="background:linear-gradient(135deg,rgba(60,20,100,.9),rgba(100,40,160,.9));border:1px solid rgba(200,150,255,.35);border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:10px;cursor:pointer;margin-top:8px;">
-      <span style="font-size:22px;">🌿</span>
-      <div>
-        <div style="font-size:14px;color:#e0c8ff;letter-spacing:2px;">云游天下</div>
-        <div style="font-size:10px;color:rgba(200,180,255,.5);letter-spacing:1px;margin-top:2px;">游历四方·获取信物</div>
-      </div>
-      <span style="margin-left:auto;color:rgba(200,150,255,.5);font-size:16px;">›</span>
-    </div>
-  </div>
 </div>
 
 <!-- AFFECTION -->
@@ -643,6 +619,11 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
       <div id="aff-profile-story" style="font-size:10px;color:rgba(220,210,255,.6);line-height:1.75;white-space:pre-wrap;margin-bottom:7px;border-bottom:1px solid rgba(180,150,255,.1);padding-bottom:7px;"></div>
       <div style="font-size:9px;color:rgba(180,160,220,.45);margin-bottom:3px;">⚔ 攻击力：<span id="aff-profile-atk" style="color:rgba(200,180,255,.7);"></span></div>
       <div id="aff-profile-ult" style="font-size:9px;color:rgba(180,160,220,.55);line-height:1.6;white-space:pre-wrap;"></div>
+      <div style="margin-top:7px;border-top:1px solid rgba(180,150,255,.1);padding-top:7px;">
+        <div id="aff-overflow-info" style="font-size:9px;color:rgba(180,160,220,.45);margin-bottom:3px;"></div>
+        <div id="aff-costume-info" style="font-size:9px;color:rgba(255,215,0,.6);margin-bottom:3px;"></div>
+        <button id="aff-costume-btn" onclick="showCostumeSlot()" style="display:none;width:100%;margin-top:4px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:#ffd700;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaHei',sans-serif;font-size:10px;padding:5px;cursor:pointer;border-radius:4px;">👗 时装槽</button>
+      </div>
     </div>
   </div>
   <div id="aff-panel">
@@ -675,6 +656,30 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
   <div class="profile-body" id="profile-body"></div>
 </div>
 
+<!-- ROAM 云游天下 -->
+<div class="screen" id="s-roam">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,#0a0020,#0d0030);"></div>
+  <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;">
+    <div style="position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(100,50,200,.15),transparent 70%);top:5%;left:10%;filter:blur(40px);"></div>
+    <div style="position:absolute;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(60,150,200,.1),transparent 70%);top:30%;right:5%;filter:blur(30px);"></div>
+  </div>
+  <div style="flex-shrink:0;padding:10px 14px;background:rgba(0,0,0,.5);border-bottom:1px solid rgba(200,150,255,.12);display:flex;align-items:center;position:relative;z-index:5;">
+    <div style="font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','STSong','Long Cang',serif;font-size:16px;color:#e0c8ff;letter-spacing:3px;">☁ 云游天下</div>
+    <button style="margin-left:auto;background:transparent;border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.6);font-size:10px;padding:4px 10px;cursor:pointer;border-radius:4px;" onclick="navTo('hub')">← 返回</button>
+  </div>
+  <div id="roam-body" style="flex:1;overflow-y:auto;padding:12px;position:relative;z-index:5;display:flex;flex-direction:column;gap:10px;"></div>
+</div>
+
+<!-- MINIGAME 小游戏界面 -->
+<div class="screen" id="s-minigame">
+  <div style="position:absolute;inset:0;background:#0a0020;"></div>
+  <div style="flex-shrink:0;padding:10px 14px;background:rgba(0,0,0,.5);border-bottom:1px solid rgba(200,150,255,.12);display:flex;align-items:center;position:relative;z-index:5;">
+    <div id="mg-title" style="font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','STSong','Long Cang',serif;font-size:14px;color:#e0c8ff;letter-spacing:2px;"></div>
+    <button style="margin-left:auto;background:transparent;border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.6);font-size:10px;padding:4px 10px;cursor:pointer;border-radius:4px;" onclick="exitMinigame()">← 返回</button>
+  </div>
+  <div id="mg-area" style="flex:1;overflow-y:auto;position:relative;z-index:5;display:flex;flex-direction:column;"></div>
+</div>
+
 <!-- RESULT -->
 <div class="screen" id="s-result">
   <div class="result-title-text" id="result-title-text"></div>
@@ -683,150 +688,6 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
   <div class="result-btns-row">
     <button class="res-btn" onclick="resultToHub()">返回驻地</button>
     <button class="res-btn-out" onclick="replayBattle()" style="margin-top:2px;">再战一局</button>
-  </div>
-</div>
-
-
-<!-- ══ 云游天下 ══ -->
-<div class="screen" id="s-wander">
-  <div style="position:absolute;inset:0;background:linear-gradient(180deg,#040010,#0a0520);"></div>
-  <div style="position:absolute;top:0;left:0;right:0;padding:12px 14px 8px;background:rgba(0,0,0,.5);border-bottom:1px solid rgba(200,150,255,.15);display:flex;align-items:center;z-index:10;">
-    <button onclick="showS('s-hub')" style="background:transparent;border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.7);font-size:11px;padding:4px 10px;cursor:pointer;border-radius:4px;">← 返回</button>
-    <div style="flex:1;text-align:center;font-size:16px;color:#e0c8ff;letter-spacing:4px;">云游天下</div>
-    <button onclick="showWanderShop()" style="background:rgba(100,40,160,.5);border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.8);font-size:11px;padding:4px 10px;cursor:pointer;border-radius:4px;">🔮 兑换</button>
-  </div>
-  <div style="position:absolute;top:50px;left:0;right:0;bottom:0;overflow-y:auto;padding:14px;">
-    <div style="font-size:10px;color:rgba(200,180,255,.35);letter-spacing:3px;text-align:center;margin-bottom:14px;">· 游历四方，获取信物 ·</div>
-    <!-- 蛇口寻踪 -->
-    <div class="wander-card" onclick="startMiniGame('snake')">
-      <div class="wander-card-icon">🐍</div>
-      <div class="wander-card-info">
-        <div class="wander-card-name">蛇口寻踪</div>
-        <div class="wander-card-desc">苗疆秘道中，随灵蛇寻觅信物</div>
-        <div class="wander-card-reward">🌿木系信物 · 🏹物理信物 · 💦水系信物</div>
-      </div>
-    </div>
-    <!-- 九宫阵法 -->
-    <div class="wander-card" onclick="startMiniGame('sudoku')">
-      <div class="wander-card-icon">🔢</div>
-      <div class="wander-card-info">
-        <div class="wander-card-name">九宫阵法</div>
-        <div class="wander-card-desc">破解古阵，获取先贤留下的典籍</div>
-        <div class="wander-card-reward">📜古籍残卷（全体亲密度+5）</div>
-      </div>
-    </div>
-    <!-- 天下见闻 -->
-    <div class="wander-card" onclick="startMiniGame('quiz')">
-      <div class="wander-card-icon">❓</div>
-      <div class="wander-card-info">
-        <div class="wander-card-name">天下见闻</div>
-        <div class="wander-card-desc">行走天下，积累见识与玉石</div>
-        <div class="wander-card-reward">💎秘境玉石（可兑换任意信物）</div>
-      </div>
-    </div>
-    <!-- 蛊术消散 -->
-    <div class="wander-card" onclick="startMiniGame('match3')">
-      <div class="wander-card-icon">✨</div>
-      <div class="wander-card-info">
-        <div class="wander-card-name">蛊术消散</div>
-        <div class="wander-card-desc">以法力消解蛊毒，随机获得信物</div>
-        <div class="wander-card-reward">🍶苦荞酒 · 🦋碧霞蝶 · 随机信物</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══ 兑换商店 ══ -->
-<div class="screen" id="s-wander-shop">
-  <div style="position:absolute;inset:0;background:linear-gradient(180deg,#040010,#0a0520);"></div>
-  <div style="position:absolute;top:0;left:0;right:0;padding:12px 14px 8px;background:rgba(0,0,0,.5);border-bottom:1px solid rgba(200,150,255,.15);display:flex;align-items:center;z-index:10;">
-    <button onclick="showS('s-wander')" style="background:transparent;border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.7);font-size:11px;padding:4px 10px;cursor:pointer;border-radius:4px;">← 返回</button>
-    <div style="flex:1;text-align:center;font-size:16px;color:#e0c8ff;letter-spacing:4px;">秘境玉石兑换</div>
-  </div>
-  <div style="position:absolute;top:50px;left:0;right:0;bottom:0;overflow-y:auto;padding:14px;">
-    <div style="text-align:center;margin-bottom:16px;">
-      <span style="font-size:13px;color:#d0d0e8;">💎 秘境玉石：</span>
-      <span id="shop-jade-count" style="font-size:16px;color:#c896ff;font-weight:bold;">0</span>
-    </div>
-    <div id="shop-items-list"></div>
-  </div>
-</div>
-
-<!-- ══ 小游戏：蛇口寻踪 ══ -->
-<div class="screen" id="s-game-snake">
-  <div style="position:absolute;inset:0;background:#040010;"></div>
-  <div style="position:absolute;top:0;left:0;right:0;padding:10px 14px;background:rgba(0,0,0,.6);display:flex;align-items:center;z-index:10;">
-    <button onclick="exitMiniGame()" style="background:transparent;border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.7);font-size:11px;padding:4px 10px;cursor:pointer;border-radius:4px;">✕ 退出</button>
-    <div style="flex:1;text-align:center;font-size:14px;color:#e0c8ff;letter-spacing:2px;">🐍 蛇口寻踪</div>
-    <div style="font-size:12px;color:#d0d0e8;">得分：<span id="snake-score">0</span></div>
-  </div>
-  <canvas id="snake-canvas" style="position:absolute;top:44px;left:50%;transform:translateX(-50%);image-rendering:pixelated;"></canvas>
-  <div id="snake-overlay" style="position:absolute;top:44px;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:rgba(0,0,0,.7);z-index:20;">
-    <div style="font-size:18px;color:#e0c8ff;letter-spacing:3px;" id="snake-overlay-title">蛇口寻踪</div>
-    <div style="font-size:11px;color:rgba(200,180,255,.6);text-align:center;padding:0 30px;">在苗疆秘道中引导灵蛇<br>寻觅散落的信物碎片</div>
-    <button onclick="initSnake()" style="background:linear-gradient(135deg,rgba(80,30,140,.9),rgba(140,60,200,.9));border:1px solid rgba(200,150,255,.4);color:#e0c8ff;font-size:14px;letter-spacing:3px;padding:10px 28px;cursor:pointer;border-radius:8px;">开始寻踪</button>
-  </div>
-  <div style="position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:0;z-index:15;">
-    <div style="display:grid;grid-template-columns:repeat(3,56px);grid-template-rows:repeat(2,56px);gap:4px;">
-      <div></div>
-      <button onpointerdown="setSnakeDir(0,-1)" style="background:rgba(100,50,180,.6);border:1px solid rgba(200,150,255,.3);color:#e0c8ff;font-size:20px;border-radius:8px;cursor:pointer;touch-action:manipulation;">▲</button>
-      <div></div>
-      <button onpointerdown="setSnakeDir(-1,0)" style="background:rgba(100,50,180,.6);border:1px solid rgba(200,150,255,.3);color:#e0c8ff;font-size:20px;border-radius:8px;cursor:pointer;touch-action:manipulation;">◄</button>
-      <button onpointerdown="setSnakeDir(0,1)" style="background:rgba(100,50,180,.6);border:1px solid rgba(200,150,255,.3);color:#e0c8ff;font-size:20px;border-radius:8px;cursor:pointer;touch-action:manipulation;">▼</button>
-      <button onpointerdown="setSnakeDir(1,0)" style="background:rgba(100,50,180,.6);border:1px solid rgba(200,150,255,.3);color:#e0c8ff;font-size:20px;border-radius:8px;cursor:pointer;touch-action:manipulation;">►</button>
-    </div>
-  </div>
-</div>
-
-<!-- ══ 小游戏：九宫阵法（数独）══ -->
-<div class="screen" id="s-game-sudoku">
-  <div style="position:absolute;inset:0;background:#040010;"></div>
-  <div style="position:absolute;top:0;left:0;right:0;padding:10px 14px;background:rgba(0,0,0,.6);display:flex;align-items:center;z-index:10;">
-    <button onclick="exitMiniGame()" style="background:transparent;border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.7);font-size:11px;padding:4px 10px;cursor:pointer;border-radius:4px;">✕ 退出</button>
-    <div style="flex:1;text-align:center;font-size:14px;color:#e0c8ff;letter-spacing:2px;">🔢 九宫阵法</div>
-    <button onclick="newSudoku()" style="background:rgba(60,20,100,.6);border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.8);font-size:10px;padding:4px 8px;cursor:pointer;border-radius:4px;">换题</button>
-  </div>
-  <div style="position:absolute;top:44px;left:0;right:0;bottom:0;overflow-y:auto;padding:10px;display:flex;flex-direction:column;align-items:center;gap:10px;">
-    <div style="font-size:10px;color:rgba(200,180,255,.4);letter-spacing:2px;margin-top:4px;">破解九宫阵法，获得古籍残卷</div>
-    <div id="sudoku-grid" style="display:grid;grid-template-columns:repeat(9,1fr);gap:1px;background:rgba(200,150,255,.2);border:2px solid rgba(200,150,255,.4);width:min(324px,90vw);aspect-ratio:1;"></div>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px;width:min(324px,90vw);">
-      <div></div>
-      <div id="sudoku-numpad" style="grid-column:1/-1;display:grid;grid-template-columns:repeat(9,1fr);gap:4px;"></div>
-    </div>
-    <button onclick="checkSudoku()" style="background:linear-gradient(135deg,rgba(80,30,140,.9),rgba(140,60,200,.9));border:1px solid rgba(200,150,255,.4);color:#e0c8ff;font-size:13px;letter-spacing:3px;padding:10px 32px;cursor:pointer;border-radius:8px;">验证阵法</button>
-    <div id="sudoku-result" style="font-size:13px;color:#c896ff;min-height:20px;letter-spacing:2px;"></div>
-  </div>
-</div>
-
-<!-- ══ 小游戏：天下见闻（问答）══ -->
-<div class="screen" id="s-game-quiz">
-  <div style="position:absolute;inset:0;background:#040010;"></div>
-  <div style="position:absolute;top:0;left:0;right:0;padding:10px 14px;background:rgba(0,0,0,.6);display:flex;align-items:center;z-index:10;">
-    <button onclick="exitMiniGame()" style="background:transparent;border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.7);font-size:11px;padding:4px 10px;cursor:pointer;border-radius:4px;">✕ 退出</button>
-    <div style="flex:1;text-align:center;font-size:14px;color:#e0c8ff;letter-spacing:2px;">❓ 天下见闻</div>
-    <div style="font-size:11px;color:#d0d0e8;">💎<span id="quiz-jade">0</span></div>
-  </div>
-  <div style="position:absolute;top:44px;left:0;right:0;bottom:0;padding:16px;display:flex;flex-direction:column;gap:12px;">
-    <div style="font-size:10px;color:rgba(200,180,255,.35);text-align:center;" id="quiz-progress">第 1 / 10 题</div>
-    <div id="quiz-question" style="background:rgba(20,10,40,.8);border:1px solid rgba(200,150,255,.2);border-radius:10px;padding:16px;font-size:14px;color:#e0d8ff;line-height:1.8;letter-spacing:.5px;min-height:100px;"></div>
-    <div id="quiz-options" style="display:flex;flex-direction:column;gap:8px;"></div>
-    <div id="quiz-feedback" style="text-align:center;font-size:13px;color:#c896ff;min-height:20px;"></div>
-    <button id="quiz-next-btn" onclick="nextQuiz()" style="display:none;background:linear-gradient(135deg,rgba(80,30,140,.9),rgba(140,60,200,.9));border:1px solid rgba(200,150,255,.4);color:#e0c8ff;font-size:13px;letter-spacing:3px;padding:10px;cursor:pointer;border-radius:8px;">下一题</button>
-  </div>
-</div>
-
-<!-- ══ 小游戏：蛊术消散（消消乐）══ -->
-<div class="screen" id="s-game-match3">
-  <div style="position:absolute;inset:0;background:#040010;"></div>
-  <div style="position:absolute;top:0;left:0;right:0;padding:10px 14px;background:rgba(0,0,0,.6);display:flex;align-items:center;z-index:10;">
-    <button onclick="exitMiniGame()" style="background:transparent;border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.7);font-size:11px;padding:4px 10px;cursor:pointer;border-radius:4px;">✕ 退出</button>
-    <div style="flex:1;text-align:center;font-size:14px;color:#e0c8ff;letter-spacing:2px;">✨ 蛊术消散</div>
-    <div style="font-size:11px;color:#d0d0e8;">得分：<span id="m3-score">0</span></div>
-  </div>
-  <div style="position:absolute;top:44px;left:0;right:0;bottom:0;display:flex;flex-direction:column;align-items:center;padding:10px;gap:8px;">
-    <div style="font-size:10px;color:rgba(200,180,255,.35);">步数：<span id="m3-moves">20</span> · 消3个或以上获奖励</div>
-    <div id="m3-grid" style="display:grid;grid-template-columns:repeat(6,1fr);gap:3px;width:min(330px,92vw);"></div>
-    <div id="m3-result" style="font-size:13px;color:#c896ff;min-height:20px;"></div>
   </div>
 </div>
 
@@ -1061,6 +922,9 @@ let state = {
   lastHeroAtk: 0, // timestamp for hero attack cycle
   heroAtkInterval: 2000,
   firstBattleDone: false,
+  costumeTickets: {ruoyin:0, huaishi:0, dancer:0},
+  affOverflow: {ruoyin:0, huaishi:0, dancer:0}, // accumulated after max
+  jadeStones: 0, // 秘境玉石 from quiz
 };
 
 let vnPhase, vnSc, vnIdx, isTyping, tyT;
@@ -1126,6 +990,7 @@ function navTo(tab){
   if(tab==='garrison'){showS('s-garrison');renderGarrison();return;}
   if(tab==='bag'){showS('s-bag');renderBag();return;}
   if(tab==='profile'){showS('s-profile');renderProfile();return;}
+  if(tab==='roam'){showS('s-roam');renderRoam();return;}
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   const active=document.getElementById('nav-'+tab);if(active)active.classList.add('active');
 }
@@ -1183,7 +1048,7 @@ function renderGarrison(){
     const card=document.createElement('div');
     card.style.cssText='background:rgba(0,0,0,.35);border:1px solid rgba(200,150,255,.2);border-radius:8px;padding:10px 12px;display:flex;align-items:center;gap:10px;cursor:pointer;margin-bottom:8px;';
     const av=document.createElement('div');av.style.cssText='width:48px;height:48px;border-radius:50%;overflow:hidden;border:1px solid rgba(200,150,255,.3);flex-shrink:0;';
-    const img=document.createElement('img');img.src=IMGS[cid]||'';img.style.cssText='width:100%;height:100%;object-fit:cover;object-position:top;';
+    const img=document.createElement('img');img.src=IMGS[cid]||'';img.style.cssText='width:100%;height:100%;object-fit:cover;object-position:center 18%;';
     av.appendChild(img);
     const info=document.createElement('div');info.style.flex='1';
     info.innerHTML=`<div style="font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','STSong','Long Cang',serif;font-size:15px;color:#e0c8ff;">${def.name}${maxed?'<span style="font-size:9px;color:#9070d0;background:rgba(120,80,200,.15);border:1px solid rgba(150,100,220,.3);padding:1px 5px;border-radius:3px;margin-left:6px;">战力+10%</span>':''}</div><div style="font-size:10px;color:#9070d0;">${def.sub}</div><div style="display:flex;align-items:center;gap:5px;margin-top:5px;"><span style="font-size:9px;color:rgba(240,232,212,.3)">好感</span><div style="flex:1;height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;"><div style="height:100%;background:linear-gradient(90deg,#a0a0c0,#e0e0f5);width:${Math.min(100,a/MAX_AFF*100)}%;"></div></div><span style="font-size:9px;color:#c8a84b;">${a}/100</span></div>`;
@@ -1199,7 +1064,7 @@ function renderGarrison(){
     const chip=document.createElement('div');
     chip.style.cssText=`display:flex;align-items:center;gap:5px;background:${isSel?'rgba(200,150,255,.15)':'rgba(255,255,255,.04)'};border:1px solid ${isSel?'rgba(200,150,255,.6)':'rgba(255,255,255,.1)'};border-radius:20px;padding:5px 12px 5px 6px;cursor:pointer;transition:all .2s;`;
     const av=document.createElement('div');av.style.cssText='width:26px;height:26px;border-radius:50%;overflow:hidden;';
-    const im=document.createElement('img');im.src=IMGS[cid]||'';im.style.cssText='width:100%;height:100%;object-fit:cover;object-position:top;';av.appendChild(im);
+    const im=document.createElement('img');im.src=IMGS[cid]||'';im.style.cssText='width:100%;height:100%;object-fit:cover;object-position:center 18%;';av.appendChild(im);
     chip.appendChild(av);
     chip.appendChild(Object.assign(document.createElement('span'),{style:'font-size:11px;color:#e0c8ff;',textContent:def.name}));
     if(isSel)chip.appendChild(Object.assign(document.createElement('span'),{style:'font-size:11px;color:#9070d0;margin-left:3px;',textContent:'✓'}));
@@ -1219,6 +1084,12 @@ function renderGarrison(){
   bc.innerHTML=`<div style="font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','STSong','Long Cang',serif;font-size:18px;color:#f0e8d4;letter-spacing:3px;">⚔ 进入秘境合战</div><div style="font-size:11px;color:rgba(240,232,212,.4);margin-top:4px;">6×6棋盘 · 步数合成 · 一波波守卫基地</div>`;
   bc.onclick=()=>{if(state.selectedHeroes.length===0){showToast('请先选择出战英雄！');return;}navTo('battle');};
   body.appendChild(bc);
+  // 云游天下 entry
+  const rc=document.createElement('div');
+  rc.style.cssText='background:linear-gradient(135deg,rgba(40,80,160,.2),rgba(100,50,200,.15));border:1px solid rgba(100,150,255,.3);border-radius:8px;padding:14px 16px;cursor:pointer;margin-top:8px;';
+  rc.innerHTML=`<div style="font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','STSong','Long Cang',serif;font-size:18px;color:#c8d8ff;letter-spacing:3px;">☁ 云游天下</div><div style="font-size:11px;color:rgba(200,220,255,.4);margin-top:4px;">小游戏 · 赢信物 · 攒亲密度</div>`;
+  rc.onclick=()=>navTo('roam');
+  body.appendChild(rc);
 }
 
 // ══ BAG ══
@@ -1282,7 +1153,7 @@ function renderProfile(){
     state.recruited.forEach(cid=>{
       const def=CHARS[cid];const isSel=state.mainHero===cid;
       const item=mkEl('div','char-sel-item'+(isSel?' selected':''));
-      const av=mkEl('div','char-sel-av');const im=document.createElement('img');im.src=IMGS[cid]||'';im.style.cssText='width:100%;height:100%;object-fit:cover;object-position:top;';av.appendChild(im);
+      const av=mkEl('div','char-sel-av');const im=document.createElement('img');im.src=IMGS[cid]||'';im.style.cssText='width:100%;height:100%;object-fit:cover;object-position:center 18%;';av.appendChild(im);
       item.appendChild(av);item.appendChild(mkEl('div','char-sel-name',def.name));
       item.onclick=()=>{state.mainHero=cid;renderProfile();updateHubDisplay();showToast(`✦ 主控角色：${def.name}`);};
       cgrid.appendChild(item);
@@ -1771,7 +1642,7 @@ function renderHeroStats() {
     const wrap = mkEl('div','hsr-hero');
     const av = mkEl('div','hsr-av');
     const im = document.createElement('img');
-    im.src = IMGS[cid]||''; im.style.cssText='width:100%;height:100%;object-fit:cover;object-position:top;';
+    im.src = IMGS[cid]||''; im.style.cssText='width:100%;height:100%;object-fit:cover;object-position:center 18%;';
     av.appendChild(im);
     wrap.appendChild(av);
     wrap.appendChild(mkEl('div','hsr-name', def.name));
@@ -2355,6 +2226,23 @@ function goAff(cid){
     const cdEl=document.getElementById('aff-profile-cd');
     if(cdEl)cdEl.innerHTML='冷却 <span style="color:rgba(200,180,255,.6);">'+prof.cd+'</span>';
   }
+  // Overflow & costume info
+  const overflow=state.affOverflow[cid]||0;
+  const tickets=state.costumeTickets[cid]||0;
+  const maxed=(state.aff[cid]||0)>=MAX_AFF;
+  const ovEl=document.getElementById('aff-overflow-info');
+  if(ovEl){
+    if(maxed) ovEl.textContent='💛 好感已满级 · 积累进度：'+overflow+'/50（下一张时装券）';
+    else ovEl.textContent='';
+  }
+  const ctEl=document.getElementById('aff-costume-info');
+  if(ctEl){
+    if(tickets>0) ctEl.textContent='🎫 时装券 ×'+tickets;
+    else if(maxed) ctEl.textContent='🎫 时装券 ×0（满级后每积累50好感获得1张）';
+    else ctEl.textContent='';
+  }
+  const cbtn=document.getElementById('aff-costume-btn');
+  if(cbtn) cbtn.style.display=maxed?'block':'none';
   showS('s-aff');
 }
 function updateAffBar(cid){
@@ -2431,8 +2319,20 @@ function doGiftRelic(cid,relicId){
 }
 function closeAffPopup(){document.getElementById('aff-popup').classList.remove('show');document.querySelector('.pop-close-btn').style.display='';}
 function gainAff(cid,n){
-  state.aff[cid]=Math.min(MAX_AFF,(state.aff[cid]||0)+n);
-  if(state.aff[cid]>=MAX_AFF)setTimeout(()=>{showToast('💛 '+CHARS[cid].name+' 好感满级！战力+10%');document.getElementById('aff-mood-text').textContent=AFF_DATA[cid].maxLine;},400);
+  const cur=state.aff[cid]||0;
+  if(cur>=MAX_AFF){
+    // Already maxed - accumulate overflow
+    state.affOverflow[cid]=(state.affOverflow[cid]||0)+n;
+    // Check for costume ticket (every 50 overflow points)
+    if(state.affOverflow[cid]>=50){
+      state.affOverflow[cid]-=50;
+      state.costumeTickets[cid]=(state.costumeTickets[cid]||0)+1;
+      setTimeout(()=>showToast('🎫 '+CHARS[cid].name+' 获得时装券×1！'),500);
+    }
+  } else {
+    state.aff[cid]=Math.min(MAX_AFF,cur+n);
+    if(state.aff[cid]>=MAX_AFF)setTimeout(()=>{showToast('💛 '+CHARS[cid].name+' 好感满级！战力+10%');document.getElementById('aff-mood-text').textContent=AFF_DATA[cid].maxLine;},400);
+  }
 }
 function spawnAffGain(txt){const el=document.createElement('div');el.className='aff-gain-float';el.textContent=txt;document.getElementById('s-aff').appendChild(el);setTimeout(()=>el.remove(),1300);}
 function backFromAff(){showS('s-garrison');renderGarrison();}
@@ -2517,6 +2417,11 @@ function showIntroScene(idx){
 }
 
 function advanceIntro(){
+  if(_introTypeTimer){clearTimeout(_introTypeTimer);_introTypeTimer=null;
+    const scene=INTRO_SCENES[introIdx];
+    if(scene){document.getElementById('intro-text').textContent=scene.txt;}
+    return;
+  }
   introIdx++;
   if(introIdx < INTRO_SCENES.length){
     showIntroScene(introIdx);
@@ -2542,10 +2447,12 @@ function finishIntro(){
   goVN('ruoyin');
 }
 
+let _introTypeTimer=null;
 function typeText(el, txt, speed){
+  if(_introTypeTimer){clearTimeout(_introTypeTimer);_introTypeTimer=null;}
   el.textContent='';
   let i=0;
-  function tk(){if(i<txt.length){el.textContent+=txt[i];i++;setTimeout(tk,speed);}  }
+  function tk(){if(i<txt.length){el.textContent+=txt[i];i++;_introTypeTimer=setTimeout(tk,speed);}else{_introTypeTimer=null;}}
   tk();
 }
 
@@ -2558,6 +2465,376 @@ function spawnVNAffGain(txt){
 }
 
 // ══════════════════════════════════════
+//  COSTUME SLOT
+// ══════════════════════════════════════
+function showCostumeSlot(){
+  const cid=currentAffChar;if(!cid)return;
+  document.getElementById('pop-title').textContent='👗 时装槽';
+  const tickets=state.costumeTickets[cid]||0;
+  document.getElementById('pop-body').innerHTML=`<div style="text-align:center;padding:10px 0;"><div style="font-size:36px;margin-bottom:8px;">👗</div><div style="font-size:12px;color:rgba(200,180,255,.5);">暂无可用时装</div><div style="font-size:10px;color:rgba(180,160,220,.4);margin-top:6px;">后续将开放时装系统</div><div style="font-size:10px;color:#ffd700;margin-top:8px;">当前时装券：${tickets} 张</div></div>`;
+  document.getElementById('pop-aff').textContent='';
+  document.querySelector('.pop-close-btn').style.display='';
+  document.getElementById('aff-popup').classList.add('show');
+}
+
+// ══════════════════════════════════════
+//  ROAM (云游天下) SYSTEM
+// ══════════════════════════════════════
+const ROAM_GAMES = [
+  {id:'snake', name:'🐍 蛇口寻踪', desc:'操控灵蛇穿行密林，吞噬灵气', rewards:'🌿木系信物 🏹物理信物 💦水系信物 🔥火系信物', icon:'🐍'},
+  {id:'sudoku', name:'🔢 九宫阵法', desc:'破解九宫格阵法，获得古籍', rewards:'📜古籍残卷（加全体亲密度）', icon:'🔢'},
+  {id:'quiz', name:'❓ 天下见闻', desc:'回答天下见闻，获得秘境玉石', rewards:'💎秘境玉石（可兑换任意信物）', icon:'❓'},
+  {id:'match3', name:'✨ 蛊术消散', desc:'消除蛊气方块，净化秘境', rewards:'🍶苦荞酒 🦋碧霞蝶 等随机信物', icon:'✨'},
+];
+
+const ROAM_RELICS = {
+  wood: {id:'wildflower',name:'🌸 苗疆野花束',charId:'ruoyin',aff:10},
+  phys: {id:'oldsword',name:'⚔️ 古剑残片',charId:'huaishi',aff:10},
+  water:{id:'pearl',name:'💍 碧海珍珠',charId:'dancer',aff:10},
+  fire: {id:'wine',name:'🍶 苦荞酒',charId:'huaishi',aff:10},
+  butterfly:{id:'butterfly',name:'🦋 碧霞蝶标本',charId:'ruoyin',aff:20},
+  scroll:{id:'score',name:'🎵 乐章残卷',charId:'dancer',aff:6},
+};
+
+function renderRoam(){
+  const body=document.getElementById('roam-body');body.innerHTML='';
+  // Jade stone exchange area
+  const exchBox=document.createElement('div');
+  exchBox.style.cssText='background:rgba(0,0,0,.35);border:1px solid rgba(100,200,255,.2);border-radius:10px;padding:12px;margin-bottom:4px;';
+  exchBox.innerHTML=`<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;"><span style="font-size:12px;color:#c8d8ff;">💎 秘境玉石：<b style="color:#ffd700;">${state.jadeStones||0}</b></span><button onclick="showJadeExchange()" style="background:rgba(100,200,255,.15);border:1px solid rgba(100,200,255,.3);color:#a0d0ff;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaHei',sans-serif;font-size:10px;padding:4px 12px;cursor:pointer;border-radius:4px;">兑换信物</button></div><div style="font-size:9px;color:rgba(200,220,255,.4);">玩「天下见闻」获得玉石，可兑换任意信物</div>`;
+  body.appendChild(exchBox);
+  // Game cards
+  ROAM_GAMES.forEach(g=>{
+    const card=document.createElement('div');
+    card.style.cssText='background:rgba(0,0,0,.35);border:1px solid rgba(200,150,255,.2);border-radius:10px;padding:14px;cursor:pointer;transition:all .2s;';
+    card.innerHTML=`<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:32px;">${g.icon}</span><div style="flex:1;"><div style="font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','STSong','Long Cang',serif;font-size:14px;color:#e0c8ff;letter-spacing:1px;">${g.name}</div><div style="font-size:10px;color:rgba(200,180,255,.5);margin-top:2px;">${g.desc}</div><div style="font-size:9px;color:rgba(180,160,220,.4);margin-top:4px;">奖励：${g.rewards}</div></div><span style="font-size:16px;color:rgba(200,180,255,.4);">▸</span></div>`;
+    card.onclick=()=>startMinigame(g.id);
+    body.appendChild(card);
+  });
+}
+
+function showJadeExchange(){
+  const body=document.getElementById('roam-body');
+  // Create a popup overlay inside roam
+  let overlay=document.getElementById('jade-exchange-overlay');
+  if(overlay)overlay.remove();
+  overlay=document.createElement('div');
+  overlay.id='jade-exchange-overlay';
+  overlay.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:300;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:20px;';
+  overlay.innerHTML=`<div style="font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','STSong','Long Cang',serif;font-size:18px;color:#c8d8ff;letter-spacing:3px;margin-bottom:8px;">💎 玉石兑换</div><div style="font-size:11px;color:rgba(200,220,255,.5);margin-bottom:12px;">当前玉石：${state.jadeStones||0} · 每件信物消耗 3 玉石</div>`;
+  const relicOptions=[
+    {key:'wood',label:'🌿 木系信物（苗疆野花束→若银）'},
+    {key:'phys',label:'🏹 物理信物（古剑残片→怀石）'},
+    {key:'water',label:'💦 水系信物（碧海珍珠→白淼）'},
+    {key:'fire',label:'🔥 火系信物（苦荞酒→怀石）'},
+    {key:'butterfly',label:'🦋 碧霞蝶标本→若银'},
+    {key:'scroll',label:'🎵 乐章残卷→白淼'},
+  ];
+  relicOptions.forEach(r=>{
+    const btn=document.createElement('button');
+    btn.style.cssText='width:280px;background:rgba(100,50,200,.1);border:1px solid rgba(200,150,255,.3);color:#e0c8ff;font-family:"ZCOOL XiaoWei","PingFang SC","Microsoft YaHei",sans-serif;font-size:11px;padding:8px 12px;cursor:pointer;border-radius:6px;text-align:left;';
+    btn.textContent=r.label;
+    btn.onclick=()=>{
+      if((state.jadeStones||0)<3){showToast('玉石不足！需要3颗');return;}
+      state.jadeStones-=3;
+      const rel=ROAM_RELICS[r.key];
+      addRelicToBag(rel.id,rel.name);
+      showToast('✦ 兑换成功：'+rel.name);
+      overlay.remove();
+      renderRoam();
+    };
+    overlay.appendChild(btn);
+  });
+  const closeBtn=document.createElement('button');
+  closeBtn.style.cssText='margin-top:12px;background:transparent;border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.6);font-size:11px;padding:6px 20px;cursor:pointer;border-radius:4px;';
+  closeBtn.textContent='关闭';closeBtn.onclick=()=>overlay.remove();
+  overlay.appendChild(closeBtn);
+  document.getElementById('app').appendChild(overlay);
+}
+
+let currentMinigame=null;
+function startMinigame(id){
+  currentMinigame=id;
+  document.getElementById('mg-title').textContent=ROAM_GAMES.find(g=>g.id===id).name;
+  showS('s-minigame');
+  const area=document.getElementById('mg-area');area.innerHTML='';
+  if(id==='snake') initSnakeGame(area);
+  else if(id==='sudoku') initSudokuGame(area);
+  else if(id==='quiz') initQuizGame(area);
+  else if(id==='match3') initMatch3Game(area);
+}
+function exitMinigame(){currentMinigame=null;navTo('roam');}
+
+function giveRoamReward(score,gameId){
+  let tier=score>=80?3:score>=40?2:1;
+  let rewards=[];
+  if(gameId==='snake'){
+    const pool=['wood','phys','water','fire'];
+    for(let i=0;i<tier;i++){const k=pool[Math.floor(Math.random()*pool.length)];const r=ROAM_RELICS[k];addRelicToBag(r.id,r.name);rewards.push(r.name);}
+  } else if(gameId==='sudoku'){
+    // 古籍残卷 = all heroes get affinity
+    const gain=tier*3;
+    state.recruited.forEach(cid=>gainAff(cid,gain));
+    rewards.push('📜 古籍残卷（全体亲密度+'+gain+'）');
+  } else if(gameId==='quiz'){
+    const stones=tier*2;
+    state.jadeStones=(state.jadeStones||0)+stones;
+    rewards.push('💎 秘境玉石 ×'+stones);
+  } else if(gameId==='match3'){
+    const pool=['fire','butterfly','scroll','wood','water'];
+    for(let i=0;i<tier;i++){const k=pool[Math.floor(Math.random()*pool.length)];const r=ROAM_RELICS[k];addRelicToBag(r.id,r.name);rewards.push(r.name);}
+  }
+  return rewards;
+}
+
+// ══ SNAKE GAME (蛇口寻踪) ══
+function initSnakeGame(area){
+  area.innerHTML='';
+  const W=15,H=15,SZ=Math.floor(Math.min((document.getElementById('app').offsetWidth-20)/W,22));
+  let snake=[{x:7,y:7}],dir={x:1,y:0},food=null,score=0,alive=true,interval=null;
+  function placeFood(){let x,y;do{x=Math.floor(Math.random()*W);y=Math.floor(Math.random()*H);}while(snake.some(s=>s.x===x&&s.y===y));food={x,y};}
+  placeFood();
+  const wrap=document.createElement('div');wrap.style.cssText='display:flex;flex-direction:column;align-items:center;padding:10px;gap:8px;flex:1;';
+  const scoreEl=document.createElement('div');scoreEl.style.cssText='font-size:14px;color:#e0c8ff;letter-spacing:2px;';scoreEl.textContent='灵气：0';
+  const canvas=document.createElement('canvas');canvas.width=W*SZ;canvas.height=H*SZ;canvas.style.cssText='border:1px solid rgba(200,150,255,.3);border-radius:6px;background:#080018;touch-action:none;';
+  const ctx=canvas.getContext('2d');
+  // Controls
+  const controls=document.createElement('div');controls.style.cssText='display:grid;grid-template-columns:repeat(3,56px);grid-template-rows:repeat(2,44px);gap:4px;justify-content:center;';
+  const dirs=[{l:'',d:null},{l:'↑',d:{x:0,y:-1}},{l:'',d:null},{l:'←',d:{x:-1,y:0}},{l:'↓',d:{x:0,y:1}},{l:'→',d:{x:1,y:0}}];
+  dirs.forEach(d=>{
+    const b=document.createElement('button');
+    b.style.cssText='background:rgba(200,150,255,.15);border:1px solid rgba(200,150,255,.3);color:#e0c8ff;font-size:18px;border-radius:6px;cursor:pointer;';
+    b.textContent=d.l;
+    if(d.d)b.onclick=()=>{if(!(d.d.x===-dir.x&&d.d.y===-dir.y))dir=d.d;};
+    else b.style.visibility='hidden';
+    controls.appendChild(b);
+  });
+  // Touch swipe
+  let tx=0,ty=0;
+  canvas.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
+  canvas.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;if(Math.abs(dx)>Math.abs(dy)){if(dx>20&&dir.x!==(-1))dir={x:1,y:0};else if(dx<-20&&dir.x!==1)dir={x:-1,y:0};}else{if(dy>20&&dir.y!==(-1))dir={x:0,y:1};else if(dy<-20&&dir.y!==1)dir={x:0,y:-1};}},{passive:true});
+  function draw(){
+    ctx.fillStyle='#080018';ctx.fillRect(0,0,W*SZ,H*SZ);
+    // Grid lines
+    ctx.strokeStyle='rgba(200,150,255,.06)';ctx.lineWidth=.5;
+    for(let i=0;i<=W;i++){ctx.beginPath();ctx.moveTo(i*SZ,0);ctx.lineTo(i*SZ,H*SZ);ctx.stroke();}
+    for(let i=0;i<=H;i++){ctx.beginPath();ctx.moveTo(0,i*SZ);ctx.lineTo(W*SZ,i*SZ);ctx.stroke();}
+    // Food
+    if(food){ctx.fillStyle='#60ff80';ctx.shadowColor='#60ff80';ctx.shadowBlur=8;ctx.beginPath();ctx.arc(food.x*SZ+SZ/2,food.y*SZ+SZ/2,SZ/3,0,Math.PI*2);ctx.fill();ctx.shadowBlur=0;}
+    // Snake
+    snake.forEach((s,i)=>{ctx.fillStyle=i===0?'#c080ff':'rgba(160,100,255,'+(0.9-i*0.02)+')';ctx.fillRect(s.x*SZ+1,s.y*SZ+1,SZ-2,SZ-2);});
+  }
+  function tick(){
+    if(!alive)return;
+    const head={x:snake[0].x+dir.x,y:snake[0].y+dir.y};
+    if(head.x<0||head.x>=W||head.y<0||head.y>=H||snake.some(s=>s.x===head.x&&s.y===head.y)){
+      alive=false;clearInterval(interval);
+      const rewards=giveRoamReward(score,'snake');
+      showToast('🐍 游戏结束！得分：'+score);
+      setTimeout(()=>{
+        area.innerHTML=`<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;flex:1;padding:20px;"><div style="font-size:28px;">🐍</div><div style="font-size:18px;color:#e0c8ff;">蛇口寻踪结束</div><div style="font-size:14px;color:#ffd700;">得分：${score}</div><div style="font-size:11px;color:rgba(200,180,255,.6);text-align:center;">获得奖励：<br>${rewards.join('<br>')}</div><button onclick="startMinigame('snake')" style="background:linear-gradient(135deg,#6a3090,#9a60c0);color:#fff;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaHei',sans-serif;font-size:13px;padding:10px 28px;cursor:pointer;border:none;border-radius:8px;">再玩一次</button><button onclick="exitMinigame()" style="background:transparent;border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.6);font-size:11px;padding:6px 20px;cursor:pointer;border-radius:4px;">返回云游</button></div>`;
+      },600);
+      return;
+    }
+    snake.unshift(head);
+    if(food&&head.x===food.x&&head.y===food.y){score+=10;scoreEl.textContent='灵气：'+score;placeFood();}
+    else snake.pop();
+    draw();
+  }
+  wrap.append(scoreEl,canvas,controls);area.appendChild(wrap);
+  draw();
+  interval=setInterval(tick,160);
+}
+
+// ══ SUDOKU GAME (九宫阵法) ══
+function initSudokuGame(area){
+  area.innerHTML='';
+  // Generate a simple 4x4 sudoku
+  const solution=generate4x4Sudoku();
+  const puzzle=solution.map(r=>[...r]);
+  // Remove some cells
+  let removed=0;
+  while(removed<7){const r=Math.floor(Math.random()*4),c=Math.floor(Math.random()*4);if(puzzle[r][c]!==0){puzzle[r][c]=0;removed++;}}
+  const userGrid=puzzle.map(r=>[...r]);
+  const wrap=document.createElement('div');wrap.style.cssText='display:flex;flex-direction:column;align-items:center;padding:16px;gap:12px;flex:1;';
+  wrap.innerHTML=`<div style="font-size:12px;color:rgba(200,180,255,.5);">填入1-4，使每行每列每个2×2方格不重复</div>`;
+  const grid=document.createElement('div');grid.style.cssText='display:grid;grid-template-columns:repeat(4,56px);grid-template-rows:repeat(4,56px);gap:2px;';
+  for(let r=0;r<4;r++)for(let c=0;c<4;c++){
+    const cell=document.createElement('div');
+    const isGiven=puzzle[r][c]!==0;
+    cell.style.cssText=`display:flex;align-items:center;justify-content:center;font-size:22px;font-family:'PingFang SC',serif;border:1px solid rgba(200,150,255,.3);border-radius:4px;cursor:${isGiven?'default':'pointer'};background:${isGiven?'rgba(200,150,255,.1)':'rgba(0,0,0,.3)'};color:${isGiven?'#e0c8ff':'#ffd700'};${r===1?'border-bottom:2px solid rgba(200,150,255,.5);':''}${c===1?'border-right:2px solid rgba(200,150,255,.5);':''}`;
+    cell.textContent=isGiven?puzzle[r][c]:'';
+    cell.dataset.r=r;cell.dataset.c=c;
+    if(!isGiven){
+      cell.onclick=()=>{
+        const cur=userGrid[r][c];
+        const next=cur>=4?0:cur+1;
+        userGrid[r][c]=next;
+        cell.textContent=next||'';
+      };
+    }
+    grid.appendChild(cell);
+  }
+  const checkBtn=document.createElement('button');
+  checkBtn.style.cssText='background:linear-gradient(135deg,#6a3090,#9a60c0);color:#fff;font-family:"ZCOOL XiaoWei","PingFang SC","Microsoft YaHei",sans-serif;font-size:13px;padding:10px 28px;cursor:pointer;border:none;border-radius:8px;';
+  checkBtn.textContent='验证阵法';
+  checkBtn.onclick=()=>{
+    let correct=true;
+    for(let r=0;r<4;r++)for(let c=0;c<4;c++){if(userGrid[r][c]!==solution[r][c]){correct=false;break;}}
+    if(correct){
+      const rewards=giveRoamReward(80,'sudoku');
+      showToast('✦ 阵法破解成功！');
+      area.innerHTML=`<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;flex:1;padding:20px;"><div style="font-size:28px;">🔢</div><div style="font-size:18px;color:#e0c8ff;">九宫阵法·破解成功</div><div style="font-size:11px;color:rgba(200,180,255,.6);text-align:center;">获得奖励：<br>${rewards.join('<br>')}</div><button onclick="startMinigame('sudoku')" style="background:linear-gradient(135deg,#6a3090,#9a60c0);color:#fff;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaHei',sans-serif;font-size:13px;padding:10px 28px;cursor:pointer;border:none;border-radius:8px;">再玩一次</button><button onclick="exitMinigame()" style="background:transparent;border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.6);font-size:11px;padding:6px 20px;cursor:pointer;border-radius:4px;">返回云游</button></div>`;
+    } else {
+      showToast('阵法有误，请再检查…');
+    }
+  };
+  wrap.append(grid,checkBtn);area.appendChild(wrap);
+}
+function generate4x4Sudoku(){
+  const base=[[1,2,3,4],[3,4,1,2],[2,1,4,3],[4,3,2,1]];
+  // Shuffle rows within bands and columns
+  const perm=[1,2,3,4].sort(()=>Math.random()-.5);
+  return base.map(row=>row.map(v=>perm[v-1]));
+}
+
+// ══ QUIZ GAME (天下见闻) ══
+const QUIZ_BANK=[
+{q:'根据2015年全球媒体监测报告，女性在印刷和广播新闻中的出现比例是？',o:['12%','24%','38%','45%'],a:1},
+{q:'全球75%的无偿工作由谁承担？',o:['老年人','低收入群体','女性','兼职工人'],a:2},
+{q:'在G级儿童电影中，会说话的角色里女性占比约为？',o:['17%','28%','42%','50%'],a:1},
+{q:'女性在工作场所遭受性骚扰的比例，在欧盟估计最高可达？',o:['20%','35%','50%','65%'],a:2},
+{q:'女性在汽车碰撞事故中受重伤的可能性比男性高多少？',o:['12%','25%','47%','71%'],a:2},
+{q:'谷歌语音识别软件准确识别男性语音的可能性比女性高出？',o:['20%','40%','70%','100%'],a:2},
+{q:'美国2014年FDA数据中女性药物不良反应记录约？',o:['约80万','约130万','约200万','约300万'],a:2},
+{q:'现代汽车碰撞测试假人最初以什么为标准？',o:['平均成年人','体重70公斤的中等男性','儿童与成人综合','女性平均体型'],a:1},
+{q:'办公室标准温度基于多少岁、多重的男性制定？',o:['30岁65公斤','40岁70公斤','45岁75公斤','35岁68公斤'],a:1},
+{q:'"性别数据缺口"最核心的含义是？',o:['女性数学能力低','以男性为默认标准导致女性需求被忽视','女性不参与统计','数字技术对女性不友好'],a:1},
+{q:'纽约爱乐引入盲试后女性新录用占比从不足5%上升到？',o:['约15%','约50%','约30%','没有变化'],a:1},
+{q:'"燕特尔综合征"在医学上指的是？',o:['女性更易患心理疾病','除非症状与男性一致否则可能被误诊','女性药物耐受低','女性更不愿就医'],a:1},
+{q:'长达50年的美国数据证明女性大量进入某行业时会发生什么？',o:['竞争力提升','薪资水平降低并失去威信','男性离开','行业规模扩大'],a:1},
+{q:'维京战士"比尔卡战士"骸骨被重新鉴定为女性是在哪年？',o:['1995','2004','2017','2020'],a:2},
+{q:'湖南江永的"女书"文字系统产生于什么背景？',o:['女性商人商业往来','封建礼教下女性创造的私密文字','古代宫廷女官文字','少数民族宗教仪式'],a:1},
+{q:'罗莎琳·富兰克林的DNA发现最终成就了谁的诺贝尔奖？',o:['居里夫人','沃森和克里克','鲍林','薛定谔'],a:1},
+{q:'中国1950年《婚姻法》最重要的进步意义是？',o:['提高结婚年龄','废除包办婚姻确立婚姻自由','扩大继承权','规定同工同酬'],a:1},
+{q:'女性患自身免疫性疾病的可能性是男性的多少倍？',o:['1.5倍','2倍','3倍','5倍'],a:2},
+{q:'在英国子宫内膜异位症平均需要多少年确诊？',o:['2年','4年','8年','12年'],a:2},
+{q:'全球女性每年寻找安全如厕场所的时间总计约？',o:['10亿小时','50亿小时','970亿小时','500亿小时'],a:2},
+{q:'英国2017年公共支出削减由女性承担的比例约？',o:['40%','60%','75%','86%'],a:3},
+{q:'"情感劳动"概念最初由谁提出？',o:['波伏娃','弗里丹','阿莉·霍克希尔德','克伦肖'],a:2},
+{q:'科学家秋瑾被称为什么？',o:['中国第一位女医生','第一位女飞行员','近代女权先驱和革命家','第一位女博士'],a:2},
+{q:'"行为端正的女性很少创造历史"出自？',o:['波伏娃','巴特勒','劳雷尔·撒切尔·乌尔里希','戴维斯'],a:2},
+{q:'联合国安理会第1325号决议的核心内容是？',o:['禁止化学武器','增加女性参与和平安全工作','规定女性议会席位','将性别歧视列为战争罪'],a:1},
+{q:'2004年研究中孕晚期孕妇有多少比例不适合标准安全带？',o:['20%','40%','62%','80%'],a:2},
+{q:'1960年代美国研究中儿童画中女性科学家的比例是？',o:['0%','1%','10%','28%'],a:1},
+{q:'塞西莉亚·佩恩-加波斯金的重要发现是？',o:['发现冥王星','发现太阳主要由氢组成','发现脉冲星','建立宇宙学模型'],a:1},
+{q:'关于止痛药给药的性别研究发现了什么？',o:['女性获药更多','男女比例相同','男性更易获止痛药女性更可能被开镇静剂','女性需求更少'],a:2},
+{q:'女性每周工作多少小时以上患抑郁焦虑风险显著增加？',o:['35小时','45小时','55小时','65小时'],a:2},
+];
+function initQuizGame(area){
+  area.innerHTML='';
+  let qIdx=0,score=0,correct=0;
+  const questions=shuffle([...QUIZ_BANK]).slice(0,10);
+  function showQuestion(){
+    area.innerHTML='';
+    if(qIdx>=questions.length){
+      const rewards=giveRoamReward(correct*10,'quiz');
+      area.innerHTML=`<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;flex:1;padding:20px;"><div style="font-size:28px;">❓</div><div style="font-size:18px;color:#e0c8ff;">天下见闻·完成</div><div style="font-size:14px;color:#ffd700;">答对 ${correct}/${questions.length}</div><div style="font-size:11px;color:rgba(200,180,255,.6);text-align:center;">获得奖励：<br>${rewards.join('<br>')}</div><button onclick="startMinigame('quiz')" style="background:linear-gradient(135deg,#6a3090,#9a60c0);color:#fff;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaHei',sans-serif;font-size:13px;padding:10px 28px;cursor:pointer;border:none;border-radius:8px;">再答一轮</button><button onclick="exitMinigame()" style="background:transparent;border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.6);font-size:11px;padding:6px 20px;cursor:pointer;border-radius:4px;">返回云游</button></div>`;
+      return;
+    }
+    const q=questions[qIdx];
+    const wrap=document.createElement('div');wrap.style.cssText='display:flex;flex-direction:column;gap:10px;padding:14px;flex:1;';
+    wrap.innerHTML=`<div style="font-size:10px;color:rgba(200,180,255,.4);">第 ${qIdx+1}/${questions.length} 题</div><div style="font-size:13px;color:#e0c8ff;line-height:1.8;padding:8px 0;">${q.q}</div>`;
+    q.o.forEach((opt,i)=>{
+      const btn=document.createElement('button');
+      btn.style.cssText='background:rgba(0,0,0,.3);border:1px solid rgba(200,150,255,.25);color:#e0c8ff;font-family:"ZCOOL XiaoWei","PingFang SC","Microsoft YaHei",sans-serif;font-size:12px;padding:10px 14px;cursor:pointer;border-radius:6px;text-align:left;transition:all .2s;';
+      btn.textContent=String.fromCharCode(65+i)+'. '+opt;
+      btn.onclick=()=>{
+        const isCorrect=i===q.a;
+        if(isCorrect){correct++;btn.style.borderColor='#60ff80';btn.style.background='rgba(60,255,80,.15)';showToast('✓ 正确！');}
+        else{btn.style.borderColor='#ff4040';btn.style.background='rgba(255,40,40,.15)';
+          const rightBtn=wrap.querySelectorAll('button')[q.a];if(rightBtn){rightBtn.style.borderColor='#60ff80';rightBtn.style.background='rgba(60,255,80,.15)';}
+          showToast('✗ 答错了…');}
+        wrap.querySelectorAll('button').forEach(b=>b.onclick=null);
+        qIdx++;
+        setTimeout(showQuestion,1200);
+      };
+      wrap.appendChild(btn);
+    });
+    area.appendChild(wrap);
+  }
+  showQuestion();
+}
+
+// ══ MATCH3 GAME (蛊术消散) ══
+function initMatch3Game(area){
+  area.innerHTML='';
+  const W=6,H=8,types=['🔮','🌿','💧','🔥','⭐','🦋'];
+  let board=[],score=0,moves=20,sel=null;
+  function init(){board=[];for(let r=0;r<H;r++){board[r]=[];for(let c=0;c<W;c++){do{board[r][c]=Math.floor(Math.random()*types.length);}while(hasMatchAt(r,c));}}render();}
+  function hasMatchAt(r,c){
+    const v=board[r][c];
+    if(c>=2&&board[r][c-1]===v&&board[r][c-2]===v)return true;
+    if(r>=2&&board[r-1][c]===v&&board[r-2][c]===v)return true;
+    return false;
+  }
+  const wrap=document.createElement('div');wrap.style.cssText='display:flex;flex-direction:column;align-items:center;padding:10px;gap:6px;flex:1;';
+  const infoEl=document.createElement('div');infoEl.style.cssText='font-size:12px;color:#e0c8ff;display:flex;gap:16px;';
+  const gridEl=document.createElement('div');
+  const SZ=Math.floor(Math.min((document.getElementById('app').offsetWidth-24)/W,48));
+  gridEl.style.cssText=`display:grid;grid-template-columns:repeat(${W},${SZ}px);grid-template-rows:repeat(${H},${SZ}px);gap:2px;`;
+  function render(){
+    infoEl.innerHTML=`<span>分数：<b style="color:#ffd700">${score}</b></span><span>步数：<b style="color:${moves<=5?'#ff4040':'#e0c8ff'}">${moves}</b></span>`;
+    gridEl.innerHTML='';
+    for(let r=0;r<H;r++)for(let c=0;c<W;c++){
+      const cell=document.createElement('div');
+      cell.style.cssText=`display:flex;align-items:center;justify-content:center;font-size:${SZ*.55}px;background:rgba(0,0,0,.3);border:1px solid ${sel&&sel.r===r&&sel.c===c?'#fff':'rgba(200,150,255,.2)'};border-radius:4px;cursor:pointer;transition:all .15s;${sel&&sel.r===r&&sel.c===c?'transform:scale(1.1);box-shadow:0 0 8px rgba(255,255,255,.5);':''}`;
+      cell.textContent=board[r][c]>=0?types[board[r][c]]:'';
+      cell.onclick=()=>onTap(r,c);
+      gridEl.appendChild(cell);
+    }
+  }
+  function onTap(r,c){
+    if(moves<=0)return;
+    if(!sel){sel={r,c};render();return;}
+    if(sel.r===r&&sel.c===c){sel=null;render();return;}
+    const dr=Math.abs(sel.r-r),dc=Math.abs(sel.c-c);
+    if((dr===1&&dc===0)||(dr===0&&dc===1)){
+      // swap
+      const tmp=board[sel.r][sel.c];board[sel.r][sel.c]=board[r][c];board[r][c]=tmp;
+      moves--;sel=null;
+      processMatches();
+    } else {sel={r,c};render();}
+  }
+  function processMatches(){
+    let matched=findMatches();
+    if(matched.length===0){render();if(moves<=0)endMatch3();return;}
+    matched.forEach(([r,c])=>board[r][c]=-1);
+    score+=matched.length*10;
+    render();
+    setTimeout(()=>{dropDown();setTimeout(()=>{processMatches();},150);},200);
+  }
+  function findMatches(){
+    const m=new Set();
+    for(let r=0;r<H;r++)for(let c=0;c<W-2;c++){if(board[r][c]>=0&&board[r][c]===board[r][c+1]&&board[r][c]===board[r][c+2]){m.add(r+','+c);m.add(r+','+(c+1));m.add(r+','+(c+2));}}
+    for(let c=0;c<W;c++)for(let r=0;r<H-2;r++){if(board[r][c]>=0&&board[r][c]===board[r+1][c]&&board[r][c]===board[r+2][c]){m.add(r+','+c);m.add((r+1)+','+c);m.add((r+2)+','+c);}}
+    return[...m].map(s=>{const[r,c]=s.split(',').map(Number);return[r,c];});
+  }
+  function dropDown(){
+    for(let c=0;c<W;c++){let empty=[];for(let r=H-1;r>=0;r--){if(board[r][c]<0)empty.push(r);else if(empty.length>0){board[empty[0]][c]=board[r][c];board[r][c]=-1;empty.push(r);empty.shift();}}
+    for(let r=0;r<H;r++){if(board[r][c]<0)board[r][c]=Math.floor(Math.random()*types.length);}}
+    render();
+  }
+  function endMatch3(){
+    const rewards=giveRoamReward(score,'match3');
+    area.innerHTML=`<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;flex:1;padding:20px;"><div style="font-size:28px;">✨</div><div style="font-size:18px;color:#e0c8ff;">蛊术消散·完成</div><div style="font-size:14px;color:#ffd700;">得分：${score}</div><div style="font-size:11px;color:rgba(200,180,255,.6);text-align:center;">获得奖励：<br>${rewards.join('<br>')}</div><button onclick="startMinigame('match3')" style="background:linear-gradient(135deg,#6a3090,#9a60c0);color:#fff;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaHei',sans-serif;font-size:13px;padding:10px 28px;cursor:pointer;border:none;border-radius:8px;">再玩一次</button><button onclick="exitMinigame()" style="background:transparent;border:1px solid rgba(200,150,255,.3);color:rgba(200,180,255,.6);font-size:11px;padding:6px 20px;cursor:pointer;border-radius:4px;">返回云游</button></div>`;
+  }
+  wrap.append(infoEl,gridEl);area.appendChild(wrap);
+  init();
+}
+
+
+// ══════════════════════════════════════
 //  UTILS
 // ══════════════════════════════════════
 function mkEl(tag,cls,html,attrs){
@@ -2567,355 +2844,6 @@ function mkEl(tag,cls,html,attrs){
 function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
 let tT=null;
 function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(tT);tT=setTimeout(()=>t.classList.remove('on'),2600);}
-
-
-// ══════════════════════════════════════
-//  云游天下系统
-// ══════════════════════════════════════
-const WANDER_RELICS = {
-  wood:    {name:'🌿 木系信物', key:'wood'},
-  phys:    {name:'🏹 物理信物', key:'phys'},
-  water:   {name:'💦 水系信物', key:'water'},
-  fire:    {name:'🔥 火系信物', key:'fire'},
-  scroll:  {name:'📜 古籍残卷', key:'scroll', special:'aff_all'},
-  jade:    {name:'💎 秘境玉石', key:'jade'},
-  wine:    {name:'🍶 苦荞酒',   key:'wine'},
-  butterfly:{name:'🦋 碧霞蝶',  key:'butterfly'},
-};
-
-const SHOP_ITEMS = [
-  {id:'wood',  cost:2, name:'🌿 木系信物'},
-  {id:'phys',  cost:2, name:'🏹 物理信物'},
-  {id:'water', cost:2, name:'💦 水系信物'},
-  {id:'fire',  cost:2, name:'🔥 火系信物'},
-  {id:'wine',  cost:3, name:'🍶 苦荞酒'},
-  {id:'butterfly',cost:4,name:'🦋 碧霞蝶'},
-];
-
-if(!state.wanderRelics) state.wanderRelics = {};
-if(!state.jadeCount)    state.jadeCount = 0;
-if(!state.costumeTickets) state.costumeTickets = {};
-if(!state.affOverflow)  state.affOverflow = {};
-
-function showWander(){
-  showS('s-wander');
-}
-
-function showWanderShop(){
-  showS('s-wander-shop');
-  document.getElementById('shop-jade-count').textContent = state.jadeCount||0;
-  const list = document.getElementById('shop-items-list');
-  list.innerHTML = '';
-  SHOP_ITEMS.forEach(item=>{
-    const div = document.createElement('div');
-    div.style.cssText='background:rgba(15,8,30,.85);border:1px solid rgba(180,140,255,.2);border-radius:8px;padding:12px 14px;display:flex;align-items:center;gap:10px;margin-bottom:8px;';
-    div.innerHTML=`<span style="font-size:20px;">${item.name.split(' ')[0]}</span>
-      <div style="flex:1;">
-        <div style="font-size:13px;color:#e0c8ff;">${item.name}</div>
-        <div style="font-size:10px;color:rgba(200,180,255,.4);">💎 ${item.cost} 秘境玉石</div>
-      </div>
-      <button onclick="buyRelic('${item.id}',${item.cost})" style="background:rgba(100,40,160,.6);border:1px solid rgba(200,150,255,.3);color:#e0c8ff;font-size:11px;padding:5px 12px;cursor:pointer;border-radius:6px;">兑换</button>`;
-    list.appendChild(div);
-  });
-}
-
-function buyRelic(id, cost){
-  if((state.jadeCount||0) < cost){ showToast('💎 玉石不足'); return; }
-  state.jadeCount -= cost;
-  addWanderRelic(id);
-  document.getElementById('shop-jade-count').textContent = state.jadeCount;
-  showToast('✅ 兑换成功：' + WANDER_RELICS[id].name);
-}
-
-function addWanderRelic(key){
-  state.wanderRelics[key] = (state.wanderRelics[key]||0) + 1;
-  if(key === 'scroll'){
-    // 古籍残卷：全体亲密度+5
-    state.recruited.forEach(cid=>{
-      state.aff[cid] = Math.min(MAX_AFF*10, (state.aff[cid]||0)+5);
-    });
-    showToast('📜 古籍残卷！全体好感+5');
-  } else if(key === 'jade'){
-    state.jadeCount = (state.jadeCount||0)+1;
-    showToast('💎 获得秘境玉石×1');
-  } else {
-    showToast('✅ 获得 ' + (WANDER_RELICS[key]?.name||key));
-  }
-}
-
-function giveWanderReward(gameType, score){
-  let rewards = [];
-  if(gameType==='snake'){
-    if(score>=30) rewards=['wood','phys','water'];
-    else if(score>=15) rewards=['wood','phys'];
-    else if(score>=5) rewards=['wood'];
-  } else if(gameType==='sudoku'){
-    rewards=['scroll'];
-  } else if(gameType==='quiz'){
-    if(score>=8) { state.jadeCount=(state.jadeCount||0)+3; rewards=['jade','jade','jade']; }
-    else if(score>=5) { state.jadeCount=(state.jadeCount||0)+2; rewards=['jade','jade']; }
-    else if(score>=3) { state.jadeCount=(state.jadeCount||0)+1; rewards=['jade']; }
-  } else if(gameType==='match3'){
-    const pool=['wine','butterfly','wood','water','phys','fire'];
-    if(score>=200) rewards=[pool[Math.floor(Math.random()*pool.length)],pool[Math.floor(Math.random()*pool.length)]];
-    else if(score>=80) rewards=[pool[Math.floor(Math.random()*pool.length)]];
-  }
-  if(rewards.length===0){ showToast('继续努力，下次可获信物！'); return; }
-  rewards.forEach(r=>addWanderRelic(r));
-  showRewardPopup(rewards);
-}
-
-function showRewardPopup(rewards){
-  const div=document.createElement('div');
-  div.className='minigame-reward-popup';
-  div.innerHTML=`<div style="font-size:18px;color:#e0c8ff;letter-spacing:3px;margin-bottom:10px;">✦ 获得信物 ✦</div>
-    <div style="font-size:22px;margin:8px 0;">${rewards.map(r=>WANDER_RELICS[r]?.name||r).join('　')}</div>
-    <button onclick="this.parentNode.remove()" style="margin-top:12px;background:rgba(100,40,160,.6);border:1px solid rgba(200,150,255,.3);color:#e0c8ff;font-size:12px;padding:6px 20px;cursor:pointer;border-radius:6px;letter-spacing:2px;">收下</button>`;
-  document.getElementById('app').appendChild(div);
-}
-
-// ══════════════════════════════════════
-//  蛇口寻踪（贪吃蛇）
-// ══════════════════════════════════════
-let snakeState={}, snakeTimer=null;
-function startMiniGame(type){
-  exitMiniGame();
-  if(type==='snake') { showS('s-game-snake'); }
-  else if(type==='sudoku') { showS('s-game-sudoku'); initSudoku(); }
-  else if(type==='quiz') { showS('s-game-quiz'); initQuiz(); }
-  else if(type==='match3') { showS('s-game-match3'); initMatch3(); }
-}
-function exitMiniGame(){
-  clearInterval(snakeTimer); snakeTimer=null;
-  showS('s-wander');
-}
-
-function initSnake(){
-  document.getElementById('snake-overlay').style.display='none';
-  const canvas=document.getElementById('snake-canvas');
-  const size=Math.min(window.innerWidth,380);
-  const cell=Math.floor(size/20);
-  const cols=20, rows=20;
-  canvas.width=cols*cell; canvas.height=rows*cell;
-  canvas.style.width=canvas.width+'px'; canvas.style.height=canvas.height+'px';
-  const ctx=canvas.getContext('2d');
-  snakeState={cols,rows,cell,ctx,snake:[{x:10,y:10}],dir:{x:1,y:0},nextDir:{x:1,y:0},food:null,score:0,alive:true};
-  placeSnakeFood();
-  clearInterval(snakeTimer);
-  snakeTimer=setInterval(stepSnake,150);
-}
-function placeSnakeFood(){
-  const s=snakeState;
-  let f;
-  do{ f={x:Math.floor(Math.random()*s.cols),y:Math.floor(Math.random()*s.rows)}; }
-  while(s.snake.some(p=>p.x===f.x&&p.y===f.y));
-  s.food=f;
-}
-function setSnakeDir(dx,dy){
-  const s=snakeState;
-  if(!s||!s.alive) return;
-  if(dx===-(s.dir.x)&&dy===-(s.dir.y)) return;
-  s.nextDir={x:dx,y:dy};
-}
-function stepSnake(){
-  const s=snakeState; if(!s.alive) return;
-  s.dir=s.nextDir;
-  const head={x:s.snake[0].x+s.dir.x,y:s.snake[0].y+s.dir.y};
-  if(head.x<0||head.x>=s.cols||head.y<0||head.y>=s.rows||s.snake.some(p=>p.x===head.x&&p.y===head.y)){
-    s.alive=false; clearInterval(snakeTimer);
-    giveWanderReward('snake',s.score);
-    showSnakeOver(s.score); return;
-  }
-  s.snake.unshift(head);
-  if(head.x===s.food.x&&head.y===s.food.y){ s.score+=5; placeSnakeFood(); document.getElementById('snake-score').textContent=s.score; }
-  else s.snake.pop();
-  drawSnake();
-}
-function drawSnake(){
-  const s=snakeState,ctx=s.ctx,c=s.cell;
-  ctx.fillStyle='#040010'; ctx.fillRect(0,0,s.cols*c,s.rows*c);
-  ctx.fillStyle='#c896ff';
-  s.snake.forEach((p,i)=>{ ctx.globalAlpha=1-i/s.snake.length*.5; ctx.fillRect(p.x*c+1,p.y*c+1,c-2,c-2); });
-  ctx.globalAlpha=1;
-  ctx.fillStyle='#7fff7f'; ctx.fillRect(s.food.x*c+2,s.food.y*c+2,c-4,c-4);
-}
-function showSnakeOver(score){
-  const ov=document.getElementById('snake-overlay');
-  ov.style.display='flex';
-  document.getElementById('snake-overlay-title').textContent=`得分 ${score}`;
-  ov.querySelector('button').textContent='再来一次';
-}
-
-// ══════════════════════════════════════
-//  九宫阵法（数独）
-// ══════════════════════════════════════
-let sudokuPuzzle=[], sudokuSolution=[], sudokuSelected=null;
-function initSudoku(){ newSudoku(); }
-function newSudoku(){
-  const sol=generateSudoku();
-  sudokuSolution=[...sol.map(r=>[...r])];
-  const puz=sol.map(r=>[...r]);
-  let remove=40;
-  while(remove>0){ const r=Math.floor(Math.random()*9),c=Math.floor(Math.random()*9); if(puz[r][c]!==0){puz[r][c]=0;remove--;} }
-  sudokuPuzzle=puz;
-  sudokuSelected=null;
-  renderSudoku();
-  document.getElementById('sudoku-result').textContent='';
-}
-function generateSudoku(){
-  const board=Array.from({length:9},()=>Array(9).fill(0));
-  fillSudoku(board,0,0); return board;
-}
-function fillSudoku(b,r,c){
-  if(r===9) return true;
-  const nr=c===8?r+1:r, nc=c===8?0:c+1;
-  const nums=[1,2,3,4,5,6,7,8,9].sort(()=>Math.random()-.5);
-  for(const n of nums){ if(sudokuValid(b,r,c,n)){ b[r][c]=n; if(fillSudoku(b,nr,nc)) return true; b[r][c]=0; } }
-  return false;
-}
-function sudokuValid(b,r,c,n){
-  for(let i=0;i<9;i++){ if(b[r][i]===n||b[i][c]===n) return false; }
-  const br=Math.floor(r/3)*3, bc=Math.floor(c/3)*3;
-  for(let i=0;i<3;i++) for(let j=0;j<3;j++) if(b[br+i][bc+j]===n) return false;
-  return true;
-}
-function renderSudoku(){
-  const grid=document.getElementById('sudoku-grid'); grid.innerHTML='';
-  const size=Math.min(window.innerWidth*.9,324);
-  grid.style.width=size+'px';
-  for(let r=0;r<9;r++) for(let c=0;c<9;c++){
-    const cell=document.createElement('div');
-    const fixed=sudokuPuzzle[r][c]!==0;
-    cell.style.cssText=`display:flex;align-items:center;justify-content:center;aspect-ratio:1;font-size:${size/9*.45}px;cursor:${fixed?'default':'pointer'};background:${fixed?'rgba(100,80,160,.3)':'rgba(20,10,40,.6)'};color:${fixed?'#d0c0ff':'#c896ff'};border:1px solid rgba(200,150,255,.15);${(c+1)%3===0&&c<8?'border-right:2px solid rgba(200,150,255,.4);':''}${(r+1)%3===0&&r<8?'border-bottom:2px solid rgba(200,150,255,.4);':''}`;
-    cell.textContent=sudokuPuzzle[r][c]||'';
-    if(!fixed) cell.onclick=()=>{ sudokuSelected={r,c}; renderSudoku(); };
-    if(sudokuSelected&&sudokuSelected.r===r&&sudokuSelected.c===c) cell.style.background='rgba(150,80,220,.5)';
-    grid.appendChild(cell);
-  }
-  const np=document.getElementById('sudoku-numpad'); np.innerHTML='';
-  for(let n=1;n<=9;n++){
-    const btn=document.createElement('button');
-    btn.textContent=n;
-    btn.style.cssText='background:rgba(80,40,140,.5);border:1px solid rgba(200,150,255,.25);color:#e0c8ff;font-size:16px;aspect-ratio:1;cursor:pointer;border-radius:4px;';
-    btn.onclick=()=>{ if(!sudokuSelected) return; const {r,c}=sudokuSelected; if(sudokuPuzzle[r][c]!==0) return; sudokuPuzzle[r][c]=n; renderSudoku(); };
-    np.appendChild(btn);
-  }
-}
-function checkSudoku(){
-  const res=document.getElementById('sudoku-result');
-  for(let r=0;r<9;r++) for(let c=0;c<9;c++) if(sudokuPuzzle[r][c]!==sudokuSolution[r][c]){ res.textContent='阵法有误，继续推演…'; res.style.color='#ff8080'; return; }
-  res.textContent='✦ 阵法破解！获得古籍残卷 ✦'; res.style.color='#c896ff';
-  giveWanderReward('sudoku',1);
-}
-
-// ══════════════════════════════════════
-//  天下见闻（问答）
-// ══════════════════════════════════════
-const QUIZ_BANK = [
-  {q:'以下哪种说法更符合性别平等的理念？',opts:['女性天生就适合照顾家庭','男女在能力上没有本质差异','男性天生比女性更理性','女性不适合担任领导职务'],ans:1},
-  {q:'中国历史上第一位女皇帝是谁？',opts:['武则天','慈禧太后','吕雉','花木兰'],ans:0},
-  {q:'"玻璃天花板"这个词指的是什么？',opts:['建筑材料','女性晋升时遇到的无形障碍','一种运动项目','透明的屋顶设计'],ans:1},
-  {q:'以下哪个选项最能体现"同工同酬"原则？',opts:['男女做同样工作，薪酬相同','男性工资更高因为养家糊口','女性工资更低因为体力较弱','薪酬由外貌决定'],ans:0},
-  {q:'中国历史上的"女书"文字是哪个地方特有的？',opts:['北京','云南','湖南江永','西藏'],ans:2},
-  {q:'以下哪句话是对"女性主义"的准确描述？',opts:['认为女性优于男性','追求所有性别在政治、经济、社会上的平等','反对所有男性','只关心女性的外貌'],ans:1},
-  {q:'"月经贫困"指的是什么问题？',opts:['女性情绪不稳定','部分女性因经济困难无法获得卫生用品','月经假太短','生育率下降'],ans:1},
-  {q:'中国历史上哪位女性以"巾帼英雄"著称？',opts:['西施','貂蝉','秦良玉','王昭君'],ans:2},
-  {q:'以下哪个行为属于性别歧视？',opts:['根据能力决定晋升','因为求职者是女性而拒绝录用','给予员工同等培训机会','尊重员工的个人选择'],ans:1},
-  {q:'联合国"可持续发展目标"中，第几个目标是性别平等？',opts:['第3个','第5个','第7个','第10个'],ans:1},
-  {q:'"生育权"的核心含义是什么？',opts:['必须生育孩子','自主决定是否生育、何时生育','生育越多越好','由国家决定生育数量'],ans:1},
-  {q:'中国"女书"文字的主要使用群体是？',opts:['宫廷女官','汉族女性','瑶族女性','苗族女性'],ans:2},
-];
-let quizIdx=0, quizScore=0, quizJade=0, quizAnswered=false;
-function initQuiz(){
-  quizIdx=0; quizScore=0; quizJade=0; quizAnswered=false;
-  document.getElementById('quiz-jade').textContent=0;
-  showQuizQuestion();
-}
-function showQuizQuestion(){
-  if(quizIdx>=QUIZ_BANK.length){ endQuiz(); return; }
-  const q=QUIZ_BANK[quizIdx];
-  document.getElementById('quiz-progress').textContent=`第 ${quizIdx+1} / ${QUIZ_BANK.length} 题`;
-  document.getElementById('quiz-question').textContent=q.q;
-  document.getElementById('quiz-feedback').textContent='';
-  document.getElementById('quiz-next-btn').style.display='none';
-  quizAnswered=false;
-  const opts=document.getElementById('quiz-options'); opts.innerHTML='';
-  q.opts.forEach((opt,i)=>{
-    const btn=document.createElement('button');
-    btn.textContent=opt;
-    btn.style.cssText='background:rgba(20,10,40,.7);border:1px solid rgba(200,150,255,.2);color:#d0c8ff;font-size:13px;padding:10px 14px;cursor:pointer;border-radius:8px;text-align:left;letter-spacing:.5px;transition:background .2s;';
-    btn.onclick=()=>answerQuiz(i,btn,q.ans);
-    opts.appendChild(btn);
-  });
-}
-function answerQuiz(i,btn,ans){
-  if(quizAnswered) return; quizAnswered=true;
-  const opts=document.getElementById('quiz-options').children;
-  opts[ans].style.background='rgba(50,150,50,.5)';
-  opts[ans].style.borderColor='rgba(100,200,100,.5)';
-  if(i===ans){ quizScore++; quizJade++; state.jadeCount=(state.jadeCount||0)+1; document.getElementById('quiz-jade').textContent=quizJade; document.getElementById('quiz-feedback').textContent='✅ 正确！+1 秘境玉石'; }
-  else { btn.style.background='rgba(150,30,30,.5)'; btn.style.borderColor='rgba(200,80,80,.4)'; document.getElementById('quiz-feedback').textContent='❌ 答错了'; }
-  document.getElementById('quiz-next-btn').style.display='block';
-  quizIdx++;
-}
-function nextQuiz(){ showQuizQuestion(); }
-function endQuiz(){
-  document.getElementById('quiz-question').textContent=`答题完成！共答对 ${quizScore} / ${QUIZ_BANK.length} 题`;
-  document.getElementById('quiz-options').innerHTML='';
-  document.getElementById('quiz-feedback').textContent=`共获得 💎${quizJade} 秘境玉石`;
-  document.getElementById('quiz-next-btn').style.display='none';
-  giveWanderReward('quiz',quizScore);
-}
-
-// ══════════════════════════════════════
-//  蛊术消散（消消乐）
-// ══════════════════════════════════════
-const M3_GEMS=['🔴','🟣','🔵','🟢','🟡','⚪'];
-let m3Board=[], m3Sel=null, m3Score=0, m3Moves=20;
-function initMatch3(){
-  m3Score=0; m3Moves=20; m3Sel=null;
-  document.getElementById('m3-score').textContent=0;
-  document.getElementById('m3-moves').textContent=20;
-  document.getElementById('m3-result').textContent='';
-  m3Board=Array.from({length:6},()=>Array.from({length:6},()=>M3_GEMS[Math.floor(Math.random()*M3_GEMS.length)]));
-  renderM3();
-}
-function renderM3(){
-  const grid=document.getElementById('m3-grid'); grid.innerHTML='';
-  const size=Math.min(window.innerWidth*.92,330);
-  grid.style.width=size+'px';
-  m3Board.forEach((row,r)=>row.forEach((gem,c)=>{
-    const cell=document.createElement('div');
-    cell.style.cssText=`display:flex;align-items:center;justify-content:center;aspect-ratio:1;font-size:${size/6*.5}px;cursor:pointer;background:${m3Sel&&m3Sel[0]===r&&m3Sel[1]===c?'rgba(150,80,220,.5)':'rgba(20,10,40,.6)'};border:1px solid rgba(200,150,255,.15);border-radius:4px;transition:background .15s;`;
-    cell.textContent=gem;
-    cell.onclick=()=>selectM3(r,c);
-    grid.appendChild(cell);
-  }));
-}
-function selectM3(r,c){
-  if(m3Moves<=0) return;
-  if(!m3Sel){ m3Sel=[r,c]; renderM3(); return; }
-  const [sr,sc]=m3Sel; m3Sel=null;
-  if(Math.abs(r-sr)+Math.abs(c-sc)===1){
-    [m3Board[sr][sc],m3Board[r][c]]=[m3Board[r][c],m3Board[sr][sc]];
-    const matched=checkM3Matches();
-    if(matched){ m3Moves--; document.getElementById('m3-moves').textContent=m3Moves; }
-    else { [m3Board[sr][sc],m3Board[r][c]]=[m3Board[r][c],m3Board[sr][sc]]; }
-  }
-  renderM3();
-  if(m3Moves<=0){ giveWanderReward('match3',m3Score); document.getElementById('m3-result').textContent='游戏结束！得分 '+m3Score; }
-}
-function checkM3Matches(){
-  let matched=false;
-  const toRemove=new Set();
-  for(let r=0;r<6;r++) for(let c=0;c<4;c++) if(m3Board[r][c]&&m3Board[r][c]===m3Board[r][c+1]&&m3Board[r][c]===m3Board[r][c+2]){ toRemove.add(r*6+c);toRemove.add(r*6+c+1);toRemove.add(r*6+c+2); matched=true; }
-  for(let c=0;c<6;c++) for(let r=0;r<4;r++) if(m3Board[r][c]&&m3Board[r][c]===m3Board[r+1][c]&&m3Board[r][c]===m3Board[r+2][c]){ toRemove.add(r*6+c);toRemove.add((r+1)*6+c);toRemove.add((r+2)*6+c); matched=true; }
-  if(matched){
-    m3Score+=toRemove.size*10; document.getElementById('m3-score').textContent=m3Score;
-    toRemove.forEach(idx=>{ m3Board[Math.floor(idx/6)][idx%6]=M3_GEMS[Math.floor(Math.random()*M3_GEMS.length)]; });
-  }
-  return matched;
-}
 
 </script>
 </body>

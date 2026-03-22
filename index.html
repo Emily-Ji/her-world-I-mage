@@ -96,8 +96,8 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
 .battle-scene{position:absolute;top:0;left:0;right:0;height:175px;overflow:hidden;}
 
 /* enemy lane */
-.enemy-lane{position:absolute;top:5px;left:0;right:0;height:165px;overflow:visible;z-index:10;}
-.enemy-sprite{position:absolute;display:flex;flex-direction:column;align-items:center;transition:left .4s ease;z-index:11;}
+.enemy-lane{position:absolute;top:5px;left:0;right:0;height:165px;overflow:visible;}
+.enemy-sprite{position:absolute;display:flex;flex-direction:column;align-items:center;transition:left .4s ease;}
 .enemy-sprite svg{animation:enemyWalk .5s steps(2) infinite;}
 @keyframes enemyWalk{0%{transform:translateY(0);}50%{transform:translateY(3px);}}
 .enemy-hp-mini{width:36px;height:4px;background:rgba(0,0,0,.3);border-radius:2px;overflow:hidden;margin-top:2px;}
@@ -246,7 +246,7 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
 /* ══ AFFECTION SCREEN ══ */
 #s-aff{background:#060404;flex-direction:column;}
 .aff-orb{position:absolute;border-radius:50%;filter:blur(50px);animation:orbP 5s ease-in-out infinite;pointer-events:none;}
-#aff-char-wrap{position:absolute;bottom:280px;left:50%;transform:translateX(-50%) translateY(20px);width:220px;height:380px;opacity:0;transition:opacity 1s,transform 1s;}
+#aff-char-wrap{position:absolute;bottom:360px;left:50%;transform:translateX(-50%) translateY(20px);width:220px;height:380px;opacity:0;transition:opacity 1s,transform 1s;}
 #aff-char-wrap.vis{opacity:1;transform:translateX(-50%) translateY(0);}
 #aff-char-wrap img{height:360px;object-fit:contain;filter:drop-shadow(0 0 18px rgba(139,79,160,.55));animation:vnFloat 4s ease-in-out infinite;}
 #aff-top-bar{position:absolute;top:0;left:0;right:0;padding:10px 14px;background:linear-gradient(180deg,rgba(6,4,4,.95),transparent);z-index:5;display:flex;align-items:center;gap:8px;}
@@ -329,9 +329,6 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
 @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
 .gbtn{background:linear-gradient(135deg,#6a3090,#9a60c0);color:#fff;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaHei',sans-serif;font-size:14px;letter-spacing:2px;padding:11px 32px;cursor:pointer;border:none;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.4);transition:all .2s;}
 .gbtn-outline{background:rgba(255,255,255,.2);border:2px solid rgba(200,150,255,.4);color:rgba(200,180,255,.8);font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaHei',sans-serif;font-size:12px;letter-spacing:2px;padding:8px 22px;cursor:pointer;border-radius:6px;transition:all .2s;}
-
-@keyframes fxPop{0%{opacity:1;transform:translate(-50%,-50%) scale(0.5);}60%{opacity:1;transform:translate(-50%,-160%) scale(1.3);}100%{opacity:0;transform:translate(-50%,-220%) scale(0.8);}}
-@keyframes fxRing{0%{opacity:1;transform:translate(-50%,-50%) scale(0.5);}100%{opacity:0;transform:translate(-50%,-50%) scale(2.5);}}
 </style>
 </head>
 <body>
@@ -505,7 +502,6 @@ body{background:#0a0010;font-family:'ZCOOL XiaoWei','PingFang SC','Microsoft YaH
   <!-- Board -->
   <div class="board-area">
     <div class="board-top-bar">
-      <button onclick="confirmLeave()" style="background:rgba(80,20,20,.7);border:1px solid rgba(255,100,100,.3);color:rgba(255,180,180,.8);font-size:10px;padding:2px 8px;cursor:pointer;border-radius:4px;letter-spacing:1px;">✕ 退出</button>
       <div class="btb-wave" id="btb-wave">第1波</div>
       <div style="font-size:9px;color:rgba(200,180,255,.4);margin-left:6px;" id="btb-enemy-count">敌军0</div>
       <div class="btb-steps">
@@ -1335,7 +1331,6 @@ function cellTierClass(item) {
 
 // ── CELL INTERACTIONS ──
 function onCellTap(idx) {
-  if(state.battleActive) return;
   const item = grid[idx];
 
   // Tap chest → open immediately (no step cost)
@@ -1842,8 +1837,6 @@ function heroAttackCycle(){
     const finalDmg=isCrit?dmg*2:dmg;
     const total=Math.floor(finalDmg*(1+extraHit*0.5));
     if(!target.dead){
-      const eEl=document.getElementById('enemy-'+target.id);
-      if(eEl){const r=eEl.getBoundingClientRect();const ar=document.getElementById('app').getBoundingClientRect();showAttackFX(bestHeroCid,r.left-ar.left+r.width/2,r.top-ar.top+r.height/2);}
       applyDamageToEnemy(target,total);
       spawnDmgNumber(total,isCrit);
     }
@@ -2851,22 +2844,6 @@ function mkEl(tag,cls,html,attrs){
 function shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
 let tT=null;
 function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('on');clearTimeout(tT);tT=setTimeout(()=>t.classList.remove('on'),2600);}
-
-
-function showAttackFX(heroId, tx, ty) {
-  const emojis={ruoyin:'🌿',huaishi:'⚔️',dancer:'💧'};
-  const colors={ruoyin:'#7fff7f',huaishi:'#ffaa40',dancer:'#40cfff'};
-  const app=document.getElementById('app');
-  const fx=document.createElement('div');
-  fx.style.cssText=`position:absolute;left:${tx}px;top:${ty}px;transform:translate(-50%,-50%);font-size:22px;z-index:999;pointer-events:none;animation:fxPop .5s ease forwards;`;
-  fx.textContent=emojis[heroId]||'✦';
-  app.appendChild(fx);
-  setTimeout(()=>fx.remove(),500);
-  const ring=document.createElement('div');
-  ring.style.cssText=`position:absolute;left:${tx}px;top:${ty}px;width:28px;height:28px;border-radius:50%;border:2px solid ${colors[heroId]||'#fff'};z-index:998;pointer-events:none;animation:fxRing .4s ease forwards;`;
-  app.appendChild(ring);
-  setTimeout(()=>ring.remove(),400);
-}
 
 </script>
 </body>
